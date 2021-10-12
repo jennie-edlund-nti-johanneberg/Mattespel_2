@@ -77,5 +77,3 @@ def omgång():
     print(" ")
 
 padda()
-
-#hej
