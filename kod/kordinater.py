@@ -1,20 +1,43 @@
 import math
+import time
 import random
 import turtle
 
 def kordinater():
     return (int(random.randint(-5, 5)))
 
-def kolla(facitx, facity):
+def kolla(facitx, facity, trtl):
     sc = turtle.Screen()
     #sc.setup(600, 600)
     svarx = (sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
     svary = (sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
 
     if facitx == svarx and facity == svary:
-        print("rätt")
+        right()
+        #print("rätt")
     else:
-        print("nej")
+        wrong()
+        #print("nej")
+    trtl.clear()
+    padda()
+
+def right():
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("RÄTT!", font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+
+def wrong():
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("FEL!", font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
 
 def padda():
     trtl = turtle.Turtle()
@@ -70,8 +93,7 @@ def padda():
 
     trtl.hideturtle()
 
-    kolla(x, y)
-    turtle.done()
+    kolla(x, y, trtl)
 
 def omgång():
     print(" ")
