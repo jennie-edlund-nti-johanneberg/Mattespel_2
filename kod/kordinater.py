@@ -44,6 +44,7 @@ def wrong():
     trtl.clear()
 
 def padda(score):
+
     trtl = turtle.Turtle()
 
     trtl.speed(0)
@@ -107,6 +108,24 @@ def padda(score):
      
     # write y
     trtl.write("y",font=("Verdana", 12, "bold"))
+
+         
+    # set position again
+    trtl.penup()
+    trtl.setpos(5,43)
+    trtl.pendown()
+     
+    # write 1
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
+    # set position again
+    trtl.penup()
+    trtl.setpos(46,5)
+    trtl.pendown()
+     
+    # write 1
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
 
     x = kordinater()
     y = kordinater()

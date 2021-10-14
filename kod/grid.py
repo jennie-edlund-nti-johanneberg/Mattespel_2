@@ -1,3 +1,4 @@
+#Här är ett funktionellt grid du kan tacka mig senare
 import turtle
 
 def grid():
@@ -64,10 +65,28 @@ def grid():
      
     # write y
     trtl.write("y",font=("Verdana", 12, "bold"))
+
+    
+     
+    # set position again
+    trtl.penup()
+    trtl.setpos(5,43)
+    trtl.pendown()
+     
+    # write 1
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
+    # set position again
+    trtl.penup()
+    trtl.setpos(46,5)
+    trtl.pendown()
+     
+    # write 1
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
     
     trtl.hideturtle()
 
     turtle.done()
-
 
 grid()
