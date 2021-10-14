@@ -87,11 +87,11 @@ def padda(score):
 
     trtl.pu()
     trtl.setx(x*50)
-    trtl.sety(y*50-5)
+    trtl.sety(y*50-7)
     trtl.color("red", "red")
     trtl.begin_fill()
     trtl.pd()
-    trtl.circle(5)
+    trtl.circle(7)
     trtl.end_fill()
 
     trtl.hideturtle()
