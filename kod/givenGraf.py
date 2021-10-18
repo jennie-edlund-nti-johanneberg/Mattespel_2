@@ -1,8 +1,62 @@
 #Jennie
 import turtle
 import random
+import time
 
-def grid():
+def kolla(facitx, facity, trtl, score):
+    sc = turtle.Screen()
+    #sc.setup(600, 600)
+    svarx = (sc.numinput("Vad är k-konstanten", "Ditt svar:"))
+    svary = (sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+
+        # set position again
+    trtl.penup()
+    trtl.color("black")
+    trtl.setpos(-240,225)
+    trtl.pendown()
+     
+    #skriver användarens svar
+    trtl.write(f"Ditt svar: y = {int(svarx)}x+{int(svary)}",font=("Verdana", 12, "bold"))
+
+    # set position again
+    trtl.penup()
+    trtl.setpos(-240,207)
+    trtl.pendown()
+
+    #skriver rätt svar
+    trtl.write(f"Rätt svar: y = {facitx}x+{facity}",font=("Verdana", 12, "bold"))
+
+    if facitx == svarx and facity == svary:
+        score += 1
+        newScore = right(score)
+        #print("rätt")
+    else:
+        wrong()
+        newScore = score
+        #print("nej")
+    trtl.clear()
+    grid(newScore)
+
+def right(score):
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("RÄTT!  Poäng:" + "{}".format(score), font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+    return score
+
+def wrong():
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("FEL!", font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+
+def grid(score):
     trtl = turtle.Turtle()
 
     trtl.speed(0)
@@ -68,7 +122,6 @@ def grid():
     trtl.write("y",font=("Verdana", 12, "bold"))
 
     
-     
     # set position again
     trtl.penup()
     trtl.setpos(5,43)
@@ -84,11 +137,20 @@ def grid():
      
     # write 1
     trtl.write("1",font=("Verdana", 12, "bold"))
+    
+    # set position again
+    trtl.penup()
+    trtl.setpos(-240,-235)
+    trtl.pendown()
+     
+    # write y = kx+m
+    trtl.write("y = kx+m",font=("Verdana", 12, "bold"))
 
-    trtl.speed(0)
+
     trtl.setheading(0)
 
-    plotter(trtl, range(-250, 250))
+    plotter(trtl, range(-230, 230), score)
+
 
     trtl.hideturtle()
 
@@ -98,20 +160,20 @@ def grid():
 def randomNumber():
     return (int(random.randint(-5, 5)))
 
-def plotter(trtl, x_range):
+def plotter(trtl, x_range, score):
     trtl.penup()
 
-    #k = randomNumber()
-    #m = randomNumber()
+    k = randomNumber()
+    m = randomNumber()
     #print(f"k: {k}")
     #print(f"m: {m}")
-
-    k = 0.5
-    m = -5
 
     for x in x_range:
         y = (k*x + m*50)
         trtl.goto(x, y)
         trtl.pendown()
 
-grid()
+    kolla(k, m, trtl, score)
+
+
+grid(0)

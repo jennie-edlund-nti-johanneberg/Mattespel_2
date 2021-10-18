@@ -1,5 +1,4 @@
 #Jennie
-import math
 import time
 import random
 import turtle
@@ -7,11 +6,30 @@ import turtle
 def kordinater():
     return (int(random.randint(-5, 5)))
 
-def kolla(facitx, facity, trtl, score):
+def kolla(facitx, facity, trtl, score):    
     sc = turtle.Screen()
     #sc.setup(600, 600)
     svarx = (sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
     svary = (sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
+
+    # set position again
+    trtl.penup()
+    trtl.color("black")
+    trtl.setpos(-240,225)
+    trtl.pendown()
+     
+    #skriver användarens svar
+    trtl.write(f"Ditt svar: ({int(svarx)}, {int(svary)})",font=("Verdana", 12, "bold"))
+
+    # set position again
+    trtl.penup()
+    trtl.setpos(-240,207)
+    trtl.pendown()
+
+    #skriver rätt svar
+    trtl.write(f"Rätt svar: ({facitx}, {facity})",font=("Verdana", 12, "bold"))
+
+    time.sleep(3)
 
     if facitx == svarx and facity == svary:
         score += 1
