@@ -3,20 +3,28 @@ import turtle
 import random
 import time
 
-def kolla(facitx, facity, trtl, score):
+def kolla(facitk, facitm, trtl, score):
     sc = turtle.Screen()
-    #sc.setup(600, 600)
-    svarx = (sc.numinput("Vad är k-konstanten", "Ditt svar:"))
-    svary = (sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+    svark = (sc.numinput("Vad är k-konstanten", "Ditt svar:"))
+    svarm = (sc.numinput("Vad är m-konstanten", "Ditt svar:"))
 
-        # set position again
+    # set position again
     trtl.penup()
     trtl.color("black")
     trtl.setpos(-240,225)
     trtl.pendown()
-     
+
     #skriver användarens svar
-    trtl.write(f"Ditt svar: y = {int(svarx)}x+{int(svary)}",font=("Verdana", 12, "bold"))
+    if svarm < 0:
+        trtl.write(f"Ditt svar: y = {int(svark)}x{int(svarm)}",font=("Verdana", 12, "bold"))
+    elif svarm > 0:
+        trtl.write(f"Ditt svar: y = {int(svark)}x+{int(svarm)}",font=("Verdana", 12, "bold"))
+    else:
+        trtl.write(f"Ditt svar: y = {int(svark)}x",font=("Verdana", 12, "bold"))
+
+    # if svark == 0:
+    #     trtl.write(f"Ditt svar: y = x+{int(svarm)}",font=("Verdana", 12, "bold"))
+    
 
     # set position again
     trtl.penup()
@@ -24,9 +32,20 @@ def kolla(facitx, facity, trtl, score):
     trtl.pendown()
 
     #skriver rätt svar
-    trtl.write(f"Rätt svar: y = {facitx}x+{facity}",font=("Verdana", 12, "bold"))
+    if facitm < 0:
+        trtl.write(f"Rätt svar: y = {facitk}x{facitm}",font=("Verdana", 12, "bold"))
+    elif facitm > 0:
+        trtl.write(f"Rätt svar: y = {facitk}x+{facitm}",font=("Verdana", 12, "bold"))
+    else:
+        trtl.write(f"Rätt svar: y = {facitk}x",font=("Verdana", 12, "bold"))
 
-    if facitx == svarx and facity == svary:
+    # if facitk == 0:
+    #     trtl.write(f"Ditt svar: y = x+{int(facitm)}",font=("Verdana", 12, "bold"))
+
+    trtl.hideturtle()
+    time.sleep(3)
+
+    if facitk == svark and facitm == svarm:
         score += 1
         newScore = right(score)
         #print("rätt")
@@ -149,7 +168,7 @@ def grid(score):
 
     trtl.setheading(0)
 
-    plotter(trtl, range(-230, 230), score)
+    plotter(trtl, range(-240, 240), score)
 
 
     trtl.hideturtle()
