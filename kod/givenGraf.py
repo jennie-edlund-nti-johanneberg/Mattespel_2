@@ -3,7 +3,6 @@ import turtle
 import random
 import time
 
-
 #Ger slumpade nummer mellan -5 och 5
 def randomNumber():
     return (int(random.randint(-5, 5)))
