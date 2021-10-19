@@ -3,16 +3,41 @@ import turtle
 import random
 import time
 
+def randomNumber():
+    return (int(random.randint(-5, 5)))
+
+def pen(trtl, posx, posy, color):
+    trtl.penup()
+    trtl.color(color)
+    trtl.setpos(posx, posy)
+    trtl.pendown()
+
+def right(score):
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("RÄTT!  Poäng:" + "{}".format(score), font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+    return score
+
+def wrong():
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("FEL!", font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+
 def kolla(facitk, facitm, trtl, score):
     sc = turtle.Screen()
     svark = (sc.numinput("Vad är k-konstanten", "Ditt svar:"))
     svarm = (sc.numinput("Vad är m-konstanten", "Ditt svar:"))
 
     # set position again
-    trtl.penup()
-    trtl.color("black")
-    trtl.setpos(-240,225)
-    trtl.pendown()
+    pen(trtl, -240, 225, "black")
 
     #skriver användarens svar
     if svarm < 0:
@@ -21,15 +46,10 @@ def kolla(facitk, facitm, trtl, score):
         trtl.write(f"Ditt svar: y = {int(svark)}x+{int(svarm)}",font=("Verdana", 12, "bold"))
     else:
         trtl.write(f"Ditt svar: y = {int(svark)}x",font=("Verdana", 12, "bold"))
-
-    # if svark == 0:
-    #     trtl.write(f"Ditt svar: y = x+{int(svarm)}",font=("Verdana", 12, "bold"))
     
 
     # set position again
-    trtl.penup()
-    trtl.setpos(-240,207)
-    trtl.pendown()
+    pen(trtl, -240, 225, "black")
 
     #skriver rätt svar
     if facitm < 0:
@@ -57,129 +77,6 @@ def kolla(facitk, facitm, trtl, score):
     grid(newScore)
     sc.exitonclick()
 
-def right(score):
-    trtl = turtle.Turtle()
-    trtl.color("black")
-    style = ("Arial", 30, "italic")
-    trtl.write("RÄTT!  Poäng:" + "{}".format(score), font=style, align="center")
-    trtl.hideturtle()
-    time.sleep(2)
-    trtl.clear()
-    return score
-
-def wrong():
-    trtl = turtle.Turtle()
-    trtl.color("black")
-    style = ("Arial", 30, "italic")
-    trtl.write("FEL!", font=style, align="center")
-    trtl.hideturtle()
-    time.sleep(2)
-    trtl.clear()
-
-def grid(score):
-    trtl = turtle.Turtle()
-
-    trtl.speed(0)
-    trtl.color("lightgrey")
-
-    for i in range(11):
-        trtl.pu()
-        trtl.setx(-250)
-        trtl.sety(250-(50*i))
-        trtl.pd() 
-        trtl.fd(500)
-
-    trtl.lt(90)
-
-    for i in range(11):
-        trtl.pu()
-        trtl.setx(250-(50*i))
-        trtl.sety(-250)
-        trtl.pd() 
-        trtl.fd(500)
-
-    trtl.pu()
-    trtl.setx(0)
-    trtl.sety(-250)
-    trtl.color("black")
-    trtl.pd() 
-    trtl.fd(500)
-
-    # set position again
-    trtl.penup()
-    trtl.setpos(246,-8)
-    trtl.pendown()
-
-    trtl.write(">", font=("Verdana", 12, "bold"))
-
-    trtl.pu()
-    trtl.setx(-250)
-    trtl.sety(0)
-    trtl.rt(90)
-    trtl.pd() 
-    trtl.fd(500)
-
-    trtl.penup()
-    trtl.setpos(-6,240)
-    trtl.pendown()
-
-    trtl.write("^", font=("Verdana", 12, "bold"))
-     
-    # set position again
-    trtl.penup()
-    trtl.setpos(235,0)
-    trtl.pendown()
-     
-    # write x
-    trtl.write("x",font=("Verdana", 12, "bold"))
-     
-    # set position again
-    trtl.penup()
-    trtl.setpos(5,235)
-    trtl.pendown()
-     
-    # write y
-    trtl.write("y",font=("Verdana", 12, "bold"))
-
-    
-    # set position again
-    trtl.penup()
-    trtl.setpos(5,43)
-    trtl.pendown()
-     
-    # write 1
-    trtl.write("1",font=("Verdana", 12, "bold"))
-
-    # set position again
-    trtl.penup()
-    trtl.setpos(46,5)
-    trtl.pendown()
-     
-    # write 1
-    trtl.write("1",font=("Verdana", 12, "bold"))
-    
-    # set position again
-    trtl.penup()
-    trtl.setpos(-240,-235)
-    trtl.pendown()
-     
-    # write y = kx+m
-    trtl.write("y = kx+m",font=("Verdana", 12, "bold"))
-
-
-    trtl.setheading(0)
-
-    plotter(trtl, range(-240, 240), score)
-
-
-    trtl.hideturtle()
-
-    turtle.done()
-
-
-def randomNumber():
-    return (int(random.randint(-5, 5)))
-
 def plotter(trtl, x_range, score):
     trtl.penup()
 
@@ -195,5 +92,76 @@ def plotter(trtl, x_range, score):
 
     kolla(k, m, trtl, score)
 
+def grid(score):
+    trtl = turtle.Turtle()
+
+    trtl.speed(0)
+
+    for i in range(11):
+        pen(trtl, -250, 250-(50*i), "lightgrey")
+        trtl.fd(500)
+
+    trtl.lt(90)
+
+    for i in range(11):
+        pen(trtl, 250-(50*i), -250, "lightgrey")        
+        trtl.fd(500)
+
+    pen(trtl, 0, -250, "black")     
+    trtl.fd(500)
+
+    # set position again
+    pen(trtl, 246, -8, "black") 
+
+    trtl.write(">", font=("Verdana", 12, "bold"))
+
+    pen(trtl, -250, 0, "black")
+    trtl.rt(90)
+    trtl.fd(500)
+
+    pen(trtl, -6, 240, "black")
+
+    trtl.write("^", font=("Verdana", 12, "bold"))
+     
+    # set position again
+    pen(trtl, 235, 0, "black")
+
+    # write x
+    trtl.write("x",font=("Verdana", 12, "bold"))
+     
+    # set position again
+    pen(trtl, 5, 235, "black")
+     
+    # write y
+    trtl.write("y",font=("Verdana", 12, "bold"))
+    
+    # set position again
+    pen(trtl, 5, 43, "black")
+     
+    # write 1
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
+    # set position again
+    pen(trtl, 46, 5, "black")
+     
+    # write 1
+    trtl.write("1",font=("Verdana", 12, "bold"))
+    
+    # set position again
+
+    pen(trtl, -240, -235, "black")
+     
+    # write y = kx+m
+    trtl.write("y = kx+m",font=("Verdana", 12, "bold"))
+
+
+    trtl.setheading(0)
+
+    plotter(trtl, range(-240, 240), score)
+
+
+    trtl.hideturtle()
+
+    turtle.done()
 
 grid(0)
