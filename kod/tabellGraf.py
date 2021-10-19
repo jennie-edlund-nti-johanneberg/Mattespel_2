@@ -3,15 +3,18 @@ import turtle
 import random
 import time
 
+#Ger slumpade nummer mellan -5 och 5
 def randomNumber():
     return (int(random.randint(-3, 3)))
 
+#Ger turtle position och färg
 def pen(trtl, posx, posy, color):
     trtl.penup()
     trtl.color(color)
     trtl.setpos(posx, posy)
     trtl.pendown()
 
+#Körs ifall användare fick rätt
 def right(score):
     trtl = turtle.Turtle()
     trtl.color("black")
@@ -22,6 +25,7 @@ def right(score):
     trtl.clear()
     return score
 
+#Körs ifall användare fick fel
 def wrong():
     trtl = turtle.Turtle()
     trtl.color("black")
@@ -31,48 +35,50 @@ def wrong():
     time.sleep(2)
     trtl.clear()
 
+#Kollar om användaren har samma svar som facit
 def kolla(facitk, facitm, trtl, score):
+
+    #Skälva skärmen läggs i variablen "sc"
     sc = turtle.Screen()
     
+    #Hämtar  random siffra och tar fram det rätta svaret
     x = randomNumber()
     facity = facitk*x+facitm
-    #sc_2 = sc.setup(600, 300)
+
+    #Tar in användarinput (svaren)
     svary = (sc.numinput(f"Vad är y när x = {x}", "Ditt svar:"))
 
-    # set position again
+    #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
-
-    #skriver användarens svar
     trtl.write(f"Ditt svar: y = {int(svary)}",font=("Verdana", 12, "bold"))
 
-    # set position again
+    #Skriver ut rätt svar
     pen(trtl, -240, 207, "black")
-
-    #skriver rätt svar
     trtl.write(f"Rätt svar: y = {facity}",font=("Verdana", 12, "bold"))
 
+    #Gömmer turtle och väntar 3 sekunder
     trtl.hideturtle()
     time.sleep(3)
 
+    #Kollar ifall användaren hade rätt
     if facity == svary:
         score += 1
         newScore = right(score)
-        #print("rätt")
     else:
         wrong()
         newScore = score
-        #print("nej")
+
+    #Rensar turtle + skickar vidare ny score
     trtl.clear()
     grid(newScore)
     sc.exitonclick()
 
+#Plottar själva grafen
 def plotter(trtl, x_range, score):
     trtl.penup()
 
     k = randomNumber()
     m = randomNumber()
-    #print(f"k: {k}")
-    #print(f"m: {m}")
 
     for x in x_range:
         y = (k*x + m*50)
@@ -81,76 +87,70 @@ def plotter(trtl, x_range, score):
 
     kolla(k, m, trtl, score)
 
+#Gör själva griden
 def grid(score):
+    #Skapar sköldpadda + hastigheten på den
     trtl = turtle.Turtle()
-
     trtl.speed(0)
 
+    #x-linjerna
     for i in range(11):
         pen(trtl, -250, 250-(50*i), "lightgrey")
         trtl.fd(500)
 
     trtl.lt(90)
 
+    #y-linjerna
     for i in range(11):
         pen(trtl, 250-(50*i), -250, "lightgrey")        
         trtl.fd(500)
 
+    #Svart x-linje
     pen(trtl, 0, -250, "black")     
     trtl.fd(500)
 
-    # set position again
+    #Pilen till höger
     pen(trtl, 246, -8, "black") 
-
     trtl.write(">", font=("Verdana", 12, "bold"))
 
+    #Svart y-linje
     pen(trtl, -250, 0, "black")
     trtl.rt(90)
     trtl.fd(500)
 
+    #Pilen uppåt
     pen(trtl, -6, 240, "black")
-
     trtl.write("^", font=("Verdana", 12, "bold"))
      
-    # set position again
+    #Skriver ut "x"
     pen(trtl, 235, 0, "black")
-
-    # write x
     trtl.write("x",font=("Verdana", 12, "bold"))
      
-    # set position again
+    #Skriver ut "y"
     pen(trtl, 5, 235, "black")
-     
-    # write y
     trtl.write("y",font=("Verdana", 12, "bold"))
     
-    # set position again
+    #Skriver ut "1"
     pen(trtl, 5, 43, "black")
-     
-    # write 1
     trtl.write("1",font=("Verdana", 12, "bold"))
 
-    # set position again
+    #Skriver ut "1"
     pen(trtl, 46, 5, "black")
-     
-    # write 1
     trtl.write("1",font=("Verdana", 12, "bold"))
     
-    # set position again
-
+    #Skriver ut "y = kx+m"
     pen(trtl, -240, -235, "black")
-     
-    # write y = kx+m
     trtl.write("y = kx+m",font=("Verdana", 12, "bold"))
 
-
+    #Skölpaddan riktas mot höger
     trtl.setheading(0)
 
     plotter(trtl, range(-240, 240), score)
 
-
+    #Gömmer sköldpadda
     trtl.hideturtle()
 
+    #Klar med sköldpadda
     turtle.done()
 
 grid(0)
