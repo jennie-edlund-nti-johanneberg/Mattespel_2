@@ -41,6 +41,7 @@ def kolla(facitx, facity, trtl, score):
         #print("nej")
     trtl.clear()
     padda(newScore)
+    sc.exitonclick()
 
 def right(score):
     trtl = turtle.Turtle()
