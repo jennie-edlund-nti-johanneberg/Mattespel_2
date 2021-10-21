@@ -54,9 +54,6 @@ def kolla(facitx, facity, trtl, score):
             trtl_2.clear()
             continue
         break
-    
-    #Tar bort "Testa igen"
-    trtl_2.clear()
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
@@ -88,6 +85,11 @@ def padda(score):
     #Skapar sköldpadda + hastigheten på den
     trtl = turtle.Turtle()
     trtl.speed(0)
+
+    sc = turtle.Screen()
+
+    sc.window_height()
+    sc.window_width()
 
     #x-linjerna
     for i in range(11):

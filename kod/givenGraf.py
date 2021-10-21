@@ -56,9 +56,6 @@ def kolla(facitk, facitm, trtl, score):
             continue
         break
 
-    #Tar bort "Testa igen"
-    trtl_2.clear()
-
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
     if svarm < 0:

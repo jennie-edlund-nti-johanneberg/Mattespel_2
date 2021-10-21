@@ -60,9 +60,6 @@ def kolla(facitk, facitm, trtl, score):
             continue
         break
 
-    #Tar bort "Testa igen"
-    trtl_2.clear()
-
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
     trtl.write(f"Ditt svar: y = {svary}",font=("Verdana", 12, "bold"))
