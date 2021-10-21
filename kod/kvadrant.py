@@ -7,7 +7,7 @@ import turtle
 #Ger kordinat mellan -5 och 5 som inte är 0
 def rand_cord():
     exclude=[0]
-    randInt = random.randint(-5,5)
+    randInt = random.randint(-4,4)
     return rand_cord() if randInt in exclude else randInt 
 
 #ger facit

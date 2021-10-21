@@ -1,0 +1,243 @@
+#Erik
+import turtle
+import random
+import time
+
+#Ger slumpade nummer mellan -5 och 5
+def randomNumber():
+    return (int(random.randint(-3, 3)))
+
+#Ger turtle position och färg
+def pen(trtl, posx, posy, color):
+    trtl.penup()
+    trtl.color(color)
+    trtl.setpos(posx, posy)
+    trtl.pendown()
+
+#Körs ifall användare fick rätt
+def right(score):
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("RÄTT!  Poäng:" + "{}".format(score), font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+    return score
+
+#Körs ifall användare fick fel
+def wrong():
+    trtl = turtle.Turtle()
+    trtl.color("black")
+    style = ("Arial", 30, "italic")
+    trtl.write("FEL!", font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+
+#ritar värdetabell
+def värdetabell(trtl,score ,x_1,x_2,x_3,y_1,y_2,y_3):
+    trtl.pu()
+    trtl.setx(-250)
+    trtl.sety(250)
+    trtl.pd()
+    trtl.color("black")
+    trtl.sety(150)
+    trtl.setx(-200)
+    trtl.sety(250)
+    trtl.setx(-250)
+    for i in range (4):
+        trtl.setx(-250)
+        trtl.sety(250-(50*i/2))
+        trtl.pd()
+        trtl.fd(50)
+        trtl.pu()
+    trtl.setx(-225)
+    trtl.sety(250)
+    trtl.lt(270)
+    trtl.pd()
+    trtl.fd(100)
+    trtl.pu()
+
+    
+    trtl.setpos(-240,230)
+    trtl.pendown()
+    trtl.write("x",font=("Verdana", 10, "bold"))
+    trtl.pu()
+        
+    trtl.setpos(-215,230)
+    trtl.pendown()
+    trtl.write("y",font=("Verdana", 10, "bold"))
+
+    #x-values
+    
+    trtl.pu()
+    trtl.setpos(-240,230-(25*1))
+    trtl.pendown()
+    trtl.write(f"{x_1}",font=("Verdana", 10, "bold"))
+    
+    trtl.pu()
+    trtl.setpos(-240,230-(25*2))
+    trtl.pendown()
+    trtl.write(f"{x_2}",font=("Verdana", 10, "bold"))
+    trtl.pu()
+    
+    trtl.setpos(-240,230-(25*3))
+    trtl.pendown()
+    trtl.write(f"{x_3}",font=("Verdana", 10, "bold"))
+    trtl.pu()
+
+    #y-values
+       
+    trtl.pu()
+    trtl.setpos(-220,230-(25*1))
+    trtl.pendown()
+    trtl.write(f"{y_1}",font=("Verdana", 10, "bold"))
+    
+    trtl.pu()
+    trtl.setpos(-220,230-(25*2))
+    trtl.pendown()
+    trtl.write(f"{y_2}",font=("Verdana", 10, "bold"))
+    trtl.pu()
+    
+    trtl.setpos(-220,230-(25*3))
+    trtl.pendown()
+    trtl.write(f"{y_3}",font=("Verdana", 10, "bold"))
+    trtl.pu()
+
+    kolla(trtl, x_1, x_2, y_1, y_2, score)
+
+
+#Kollar om användaren har samma svar som facit
+def kolla(trtl, x_1, x_2, y_1, y_2, score):
+
+    #Själva skärmen läggs i variablen "sc"    
+    sc = turtle.Screen()
+    #användargiss
+    svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
+    svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+    #skapa facit
+    facitk=((y_2-y_1)/(x_2-x_1))
+    facitm=(y_1-facitk*x_1)
+
+    
+    #Skriver ut användarens svar
+    pen(trtl, -240, 225, "black")
+    if svarm < 0:
+        trtl.write(f"Ditt svar: y = {svark}x{int(svarm)}",font=("Verdana", 12, "bold"))
+    elif svarm > 0:
+        trtl.write(f"Ditt svar: y = {svark}x+{int(svarm)}",font=("Verdana", 12, "bold"))
+    else:
+        trtl.write(f"Ditt svar: y = {svark}x",font=("Verdana", 12, "bold"))
+
+    #Skriver ut rätt svar
+    pen(trtl, -240, 207, "black")
+    if facitm < 0:
+        trtl.write(f"Rätt svar: y = {facitk}x{facitm}",font=("Verdana", 12, "bold"))
+    elif facitm > 0:
+        trtl.write(f"Rätt svar: y = {facitk}x+{facitm}",font=("Verdana", 12, "bold"))
+    else:
+        trtl.write(f"Rätt svar: y = {facitk}x",font=("Verdana", 12, "bold"))
+
+
+    #Gömmer turtle och väntar 3 sekunder
+    trtl.hideturtle()
+    time.sleep(3)
+
+    #Kollar ifall användaren hade rätt
+    if facitk == svark and facitm == svarm:
+        score += 1
+        newScore = right(score)
+    else:
+        wrong()
+        newScore = score
+
+    #Rensar turtle + skickar vidare ny score
+    trtl.clear()
+    game(newScore)
+    sc.exitonclick()
+
+
+#Gör själva griden
+def game(score):
+    #Skapar sköldpadda + hastigheten på den
+    trtl = turtle.Turtle()
+    trtl.speed(0)
+
+    #x-linjerna
+    for i in range(11):
+        pen(trtl, -250, 250-(50*i), "lightgrey")
+        trtl.fd(500)
+
+    trtl.lt(90)
+
+    #y-linjerna
+    for i in range(11):
+        pen(trtl, 250-(50*i), -250, "lightgrey")        
+        trtl.fd(500)
+
+    #Svart x-linje
+    pen(trtl, 0, -250, "black")     
+    trtl.fd(500)
+
+    #Pilen till höger
+    pen(trtl, 246, -8, "black") 
+    trtl.write(">", font=("Verdana", 12, "bold"))
+
+    #Svart y-linje
+    pen(trtl, -250, 0, "black")
+    trtl.rt(90)
+    trtl.fd(500)
+
+    #Pilen uppåt
+    pen(trtl, -6, 240, "black")
+    trtl.write("^", font=("Verdana", 12, "bold"))
+     
+    #Skriver ut "x"
+    pen(trtl, 235, 0, "black")
+    trtl.write("x",font=("Verdana", 12, "bold"))
+     
+    #Skriver ut "y"
+    pen(trtl, 5, 235, "black")
+    trtl.write("y",font=("Verdana", 12, "bold"))
+    
+    #Skriver ut "1"
+    pen(trtl, 5, 43, "black")
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
+    #Skriver ut "1"
+    pen(trtl, 46, 5, "black")
+    trtl.write("1",font=("Verdana", 12, "bold"))
+    
+    #Skriver ut "y = kx+m"
+    pen(trtl, -240, -235, "black")
+    trtl.write("y = kx+m",font=("Verdana", 12, "bold"))
+
+    #Skölpaddan riktas mot höger
+    trtl.setheading(0)
+
+    #ger massa saker massa värden
+    k = randomNumber()
+    m = randomNumber()
+    #  
+    #y = (k*x + m*50)
+    #
+
+    multiplyer=randomNumber()
+    x_1 = randomNumber()
+    x_2=x_1+multiplyer
+    x_3=x_1+2*multiplyer
+
+    y_1 = k*x_1+m
+    y_2 = k*x_2+m
+    y_3 = k*x_3+m
+    #Plottar värdetabellen
+    värdetabell(trtl,score ,x_1,x_2,x_3,y_1,y_2,y_3)
+
+    #Gömmer sköldpadda
+    trtl.hideturtle()
+    turtle.done()
+
+    #plotter(trtl, range(-250, 250), score)
+
+game(0)
