@@ -3,74 +3,160 @@ import math
 import time
 import random
 import turtle
+
+#Ger kordinat mellan -5 och 5 som inte är 0
 def rand_cord():
-    return int(random.randint(-5,5))
+    exclude=[0]
+    randInt = random.randint(-1,1)
+    return rand_cord() if randInt in exclude else randInt 
 
+#ger facit
+def facitet(x, y):
+    if x>0 and y>0:
+        return 1
+    elif x<0 and y>0:
+        return 2
+    elif x<0 and y<0:
+       return 3
+    else:
+        return 4
 
+#Ger en position och färg till trtl
+def pen(trtl, posx, posy, color):
+    trtl.penup()
+    trtl.color(color)
+    trtl.setpos(posx, posy)
+    trtl.pendown()
 
-
-
-def cord_system():
+#Rätt svar
+def right(score):
     trtl = turtle.Turtle()
+    style = ("Arial", 30, "italic")
+    trtl.write("RÄTT!  Poäng:" + "{}".format(score), font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
+    return score
 
-    #trtl.ht()
+#Fel svar
+def wrong():
+    trtl = turtle.Turtle()
+    style = ("Arial", 30, "italic")
+    trtl.write("FEL!", font=style, align="center")
+    trtl.hideturtle()
+    time.sleep(2)
+    trtl.clear()
 
-    trtl.speed(10)
-    trtl.color("lightgrey")
-    
-    #vågräta(horrisontella) linjer
+
+#Kollar om användaren har samma svar som facit
+def check(facit_kvad, trtl, score):
+
+    #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+
+    #Tar in användarinput (svaren)
+    user_guess = (sc.numinput("Vilken kavdrant befinner sig punket i? 1-4", "Ditt svar:"))
+
+    #Skriver ut användarens svar
+    pen(trtl, -240, 225, "black")
+    trtl.write(f"Ditt svar: ({int(user_guess)})",font=("Verdana", 12, "bold"))
+
+    #Skriver ut rätt svar
+    pen(trtl, -240, 207, "black")
+    trtl.write(f"Rätt svar: ({facit_kvad})",font=("Verdana", 12, "bold"))
+
+    #Väntar 2 sekunder
+    trtl.hideturtle()
+    time.sleep(2)
+
+    #Kollar ifall användaren hade rätt
+    if user_guess==facit_kvad:
+        score += 1
+        newScore = right(score)
+    else:
+        score = 0
+        wrong()
+        newScore = score
+
+    #Rensar turtle + skickar vidare ny score
+    trtl.clear()
+    game(newScore)
+    sc.exitonclick()
+
+#Gör kordinatsystemet och kör allt 
+def game(score):
+    #Skapar trtl + maxhastigheten på den
+    trtl = turtle.Turtle()
+    trtl.speed(0)
+
+    #ritat ut x-linjerna
     for i in range(11):
-        trtl.pu()
-        trtl.setx(-250)
-        trtl.sety(250-(50*i))
-        trtl.pd() 
+        pen(trtl, -250, 250-(50*i), "lightgrey")
         trtl.fd(500)
 
-    #left trun (90deg)
     trtl.lt(90)
 
-    #Lodräta(vertikal) linjer
+    #y-linjerna
     for i in range(11):
-        trtl.pu()
-        trtl.sety(-250)
-        trtl.setx(250-(50*i))
-        trtl.pd() 
+        pen(trtl, 250-(50*i), -250, "lightgrey")        
         trtl.fd(500)
 
-    trtl.color("black")
-
-    #rita y-axel
-    trtl.pu()
-    trtl.setx(0)
-    trtl.sety(-250)
-    trtl.pd() 
+    #Svart x-linje
+    pen(trtl, 0, -250, "black")     
     trtl.fd(500)
 
-    #rita x-axel
-    trtl.pu()
-    trtl.setx(-250)
-    trtl.sety(0)
+    #Pilen till höger
+    pen(trtl, 246, -8, "black") 
+    trtl.write(">", font=("Verdana", 12, "bold"))
+
+    #Svart y-linje
+    pen(trtl, -250, 0, "black")
     trtl.rt(90)
-    trtl.pd() 
     trtl.fd(500)
 
-    x_cord = rand_cord()
-    y_cord = rand_cord()
+    #Pilen uppåt
+    pen(trtl, -6, 240, "black")
+    trtl.write("^", font=("Verdana", 12, "bold"))
+     
+    #Skriver ut "x"
+    pen(trtl, 235, 0, "black")
+    trtl.write("x",font=("Verdana", 12, "bold"))
+     
+    #Skriver ut "y"
+    pen(trtl, 5, 235, "black")
+    trtl.write("y",font=("Verdana", 12, "bold"))
+    
+    #Skriver ut "1"
+    pen(trtl, 5, 43, "black")
+    trtl.write("1",font=("Verdana", 12, "bold"))
 
-    #flö trtl till cord
+    #Skriver ut "1"
+    pen(trtl, 46, 5, "black")
+    trtl.write("1",font=("Verdana", 12, "bold"))
+
+    #Tar in slumpmässigt x och y
+    x = rand_cord()
+    y = rand_cord()
+
+    #Målar ut kordinaten i rött
     trtl.pu()
-    trtl.setx(50*x_cord)
-    trtl.sety(50*y_cord)
-
-    #rita upp prick 
-    trtl.color("red","red")
+    trtl.setx(x*50)
+    trtl.sety(y*50-7)
+    trtl.color("red", "red")
     trtl.begin_fill()
+    trtl.pd()
     trtl.circle(7)
     trtl.end_fill()
-    
-    #Fråga vilken kvadrant cord är i
-    guess()
+
+    #Gömmer sköldpadda
+    trtl.hideturtle()
+
+    #Klar med sköldpadda
+    facit=facitet(x, y)
+    check(facit, trtl, score)
+
+game(0)
 
 
-def guess():
-    return input("Vilken kvadrant ligger punkten i?")
+
+
