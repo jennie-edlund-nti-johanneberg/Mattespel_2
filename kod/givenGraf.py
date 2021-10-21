@@ -41,17 +41,17 @@ def kolla(facitk, facitm, trtl, score):
     sc = turtle.Screen()
 
     #Tar in användarinput (svaren)
-    svark = (sc.numinput("Vad är k-konstanten", "Ditt svar:"))
-    svarm = (sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+    svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
+    svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
     if svarm < 0:
-        trtl.write(f"Ditt svar: y = {int(svark)}x{int(svarm)}",font=("Verdana", 12, "bold"))
+        trtl.write(f"Ditt svar: y = {svark}x{int(svarm)}",font=("Verdana", 12, "bold"))
     elif svarm > 0:
-        trtl.write(f"Ditt svar: y = {int(svark)}x+{int(svarm)}",font=("Verdana", 12, "bold"))
+        trtl.write(f"Ditt svar: y = {svark}x+{int(svarm)}",font=("Verdana", 12, "bold"))
     else:
-        trtl.write(f"Ditt svar: y = {int(svark)}x",font=("Verdana", 12, "bold"))
+        trtl.write(f"Ditt svar: y = {svark}x",font=("Verdana", 12, "bold"))
     
 
     #Skriver ut rätt svar

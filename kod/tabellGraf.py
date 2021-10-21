@@ -46,11 +46,11 @@ def kolla(facitk, facitm, trtl, score):
     facity = facitk*x+facitm
 
     #Tar in användarinput (svaren)
-    svary = (sc.numinput(f"Vad är y när x = {x}", "Ditt svar:"))
+    svary = int(sc.numinput(f"Vad är y när x = {x}", "Ditt svar:"))
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
-    trtl.write(f"Ditt svar: y = {int(svary)}",font=("Verdana", 12, "bold"))
+    trtl.write(f"Ditt svar: y = {svary}",font=("Verdana", 12, "bold"))
 
     #Skriver ut rätt svar
     pen(trtl, -240, 207, "black")
