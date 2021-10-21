@@ -39,10 +39,25 @@ def wrong():
 def kolla(facitk, facitm, trtl, score):
     #Skälva skärmen läggs i variablen "sc"
     sc = turtle.Screen()
+    svark = 0
 
     #Tar in användarinput (svaren)
-    svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
-    svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+    while svark != None:
+        try:
+            svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
+            svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+        except (TypeError):
+            trtl_2 = turtle.Turtle()
+            trtl_2.hideturtle()
+            pen(trtl_2, 50, 100, "grey")
+            trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
+            time.sleep(0.5)
+            trtl_2.clear()
+            continue
+        break
+
+    #Tar bort "Testa igen"
+    trtl_2.clear()
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
@@ -152,12 +167,9 @@ def grid(score):
     #Skölpaddan riktas mot höger
     trtl.setheading(0)
 
-    plotter(trtl, range(-240, 240), score)
-
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    #Klar med sköldpadda
-    turtle.done()
+    plotter(trtl, range(-240, 240), score)
 
 grid(0)

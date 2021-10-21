@@ -44,9 +44,24 @@ def kolla(facitk, facitm, trtl, score):
     #Hämtar  random siffra och tar fram det rätta svaret
     x = randomNumber()
     facity = facitk*x+facitm
+    svary = 0
 
-    #Tar in användarinput (svaren)
-    svary = int(sc.numinput(f"Vad är y när x = {x}", "Ditt svar:"))
+    #Tar in användarinput (svaret)
+    while svary != None:
+        try:
+            svary = int(sc.numinput(f"Vad är y när x = {x}", "Ditt svar:"))
+        except (TypeError):
+            trtl_2 = turtle.Turtle()
+            trtl_2.hideturtle()
+            pen(trtl_2, 50, 100, "grey")
+            trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
+            time.sleep(0.5)
+            trtl_2.clear()
+            continue
+        break
+
+    #Tar bort "Testa igen"
+    trtl_2.clear()
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
@@ -145,12 +160,9 @@ def grid(score):
     #Skölpaddan riktas mot höger
     trtl.setheading(0)
 
-    plotter(trtl, range(-240, 240), score)
-
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    #Klar med sköldpadda
-    turtle.done()
+    plotter(trtl, range(-240, 240), score)
 
 grid(0)

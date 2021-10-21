@@ -38,16 +38,25 @@ def kolla(facitx, facity, trtl, score):
 
     #Skälva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
+    svary = 0
 
     #Tar in användarinput (svaren)
-    svarx = int(sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
-    svary = int(sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
-
-    # try:
-    #     svarx = int(sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
-    #     svary = int(sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
-    # except NoneType:
-    #     return sc
+    while svary != None:
+        try:
+            svarx = int(sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
+            svary = int(sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
+        except (TypeError):
+            trtl_2 = turtle.Turtle()
+            trtl_2.hideturtle()
+            pen(trtl_2, 50, 100, "grey")
+            trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
+            time.sleep(0.5)
+            trtl_2.clear()
+            continue
+        break
+    
+    #Tar bort "Testa igen"
+    trtl_2.clear()
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
