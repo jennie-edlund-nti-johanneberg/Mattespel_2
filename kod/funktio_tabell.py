@@ -7,6 +7,11 @@ import time
 def randomNumber():
     return (int(random.randint(-3, 3)))
 
+def rand_nr():
+    exclude=[0]
+    randInt = random.randint(-4,4)
+    return rand_nr() if randInt in exclude else randInt 
+
 #Ger turtle position och färg
 def pen(trtl, posx, posy, color):
     trtl.penup()
@@ -104,6 +109,7 @@ def värdetabell(trtl,score ,x_1,x_2,x_3,y_1,y_2,y_3):
     trtl.pendown()
     trtl.write(f"{y_3}",font=("Verdana", 10, "bold"))
     trtl.pu()
+    trtl.ht()
 
     kolla(trtl, x_1, x_2, y_1, y_2, score)
 
@@ -117,12 +123,12 @@ def kolla(trtl, x_1, x_2, y_1, y_2, score):
     svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
     svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
     #skapa facit
-    facitk=((y_2-y_1)/(x_2-x_1))
+    facitk=((y_2-y_1)/(x_2-x_1))#delar med 0 om de gissat 0 fixa de
     facitm=(y_1-facitk*x_1)
 
     
     #Skriver ut användarens svar
-    pen(trtl, -240, 225, "black")
+    pen(trtl, 50, 225, "black")
     if svarm < 0:
         trtl.write(f"Ditt svar: y = {svark}x{int(svarm)}",font=("Verdana", 12, "bold"))
     elif svarm > 0:
@@ -131,7 +137,7 @@ def kolla(trtl, x_1, x_2, y_1, y_2, score):
         trtl.write(f"Ditt svar: y = {svark}x",font=("Verdana", 12, "bold"))
 
     #Skriver ut rätt svar
-    pen(trtl, -240, 207, "black")
+    pen(trtl, 50, 207, "black")
     if facitm < 0:
         trtl.write(f"Rätt svar: y = {facitk}x{facitm}",font=("Verdana", 12, "bold"))
     elif facitm > 0:
@@ -223,7 +229,7 @@ def game(score):
     #y = (k*x + m*50)
     #
 
-    multiplyer=randomNumber()
+    multiplyer=rand_nr()
     x_1 = randomNumber()
     x_2=x_1+multiplyer
     x_3=x_1+2*multiplyer
