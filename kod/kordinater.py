@@ -45,7 +45,7 @@ def kolla(facitx, facity, trtl, score):
         try:
             svarx = int(sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
             svary = int(sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
-        except (TypeError):
+        except (TypeError, OverflowError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")

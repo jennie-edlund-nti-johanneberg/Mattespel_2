@@ -46,7 +46,7 @@ def kolla(facitk, facitm, trtl, score):
         try:
             svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
             svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
-        except (TypeError):
+        except (TypeError, OverflowError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")
@@ -167,6 +167,6 @@ def grid(score):
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    plotter(trtl, range(-240, 240), score)
+    plotter(trtl, range(-250, 250), score)
 
 grid(0)
