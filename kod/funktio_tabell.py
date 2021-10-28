@@ -5,7 +5,7 @@ import time
 
 #Ger slumpade nummer mellan -5 och 5
 def randomNumber():
-    return (int(random.randint(-3, 3)))
+    return (int(random.randint(-5, 5)))
 
 def rand_nr():
     exclude=[0]
@@ -119,20 +119,33 @@ def kolla(trtl, x_1, x_2, y_1, y_2, score):
 
     #Själva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
-    #användargiss
-    svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
-    svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+    svark = 0
     #skapa facit
-    facitk=((y_2-y_1)/(x_2-x_1))#delar med 0 om de gissat 0 fixa de
-    facitm=(y_1-facitk*x_1)
+    facitk = int((y_2-y_1)/(x_2-x_1))#delar med 0 om de gissat 0 fixa de
+    facitm = int(y_1-facitk*x_1)
+
+    #användargiss
+    while svark != None:
+        try:
+            svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
+            svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
+        except (TypeError, OverflowError):
+            trtl_2 = turtle.Turtle()
+            trtl_2.hideturtle()
+            pen(trtl_2, 50, 100, "grey")
+            trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
+            time.sleep(0.5)
+            trtl_2.clear()
+            continue
+        break
 
     
     #Skriver ut användarens svar
     pen(trtl, 50, 225, "black")
     if svarm < 0:
-        trtl.write(f"Ditt svar: y = {svark}x{int(svarm)}",font=("Verdana", 12, "bold"))
+        trtl.write(f"Ditt svar: y = {svark}x{svarm}",font=("Verdana", 12, "bold"))
     elif svarm > 0:
-        trtl.write(f"Ditt svar: y = {svark}x+{int(svarm)}",font=("Verdana", 12, "bold"))
+        trtl.write(f"Ditt svar: y = {svark}x+{svarm}",font=("Verdana", 12, "bold"))
     else:
         trtl.write(f"Ditt svar: y = {svark}x",font=("Verdana", 12, "bold"))
 

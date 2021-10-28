@@ -1,4 +1,5 @@
 #Jennie
+#Fel knapp 10gg gå vidare
 import time
 import random
 import turtle
