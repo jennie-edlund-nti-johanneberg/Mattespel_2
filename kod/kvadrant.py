@@ -53,9 +53,21 @@ def check(facit_kvad, trtl, score):
 
     #Skärmen blir variablen "sc"    
     sc = turtle.Screen()
+    user_guess = 0
 
     #Tar in användarinput (svaren)
-    user_guess = (sc.numinput("Vilken kavdrant befinner sig punket i? 1-4", "Ditt svar:"))
+    while user_guess != None:
+        try:
+            user_guess = int(sc.numinput("Vilken kavdrant befinner sig punket i? 1-4", "Ditt svar:"))
+        except (TypeError, OverflowError):
+            trtl_2 = turtle.Turtle()
+            trtl_2.hideturtle()
+            pen(trtl_2, 50, 100, "grey")
+            trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
+            time.sleep(0.5)
+            trtl_2.clear()
+            continue
+        break
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
