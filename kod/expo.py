@@ -9,7 +9,7 @@ def randomNumber():
 
 #Ger slumpade nummer mellan -5 och 5
 def randomNumber_nr2():
-    return (int(random.randint(-2, 5)))
+    return (int(random.randint(0, 5)))
 
 #Ger turtle position och färg
 def pen(trtl, posx, posy, color):
