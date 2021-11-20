@@ -1,4 +1,8 @@
 #gör till test 2
+lista=["wef","wed","sdf","kjf"]
+for i in lista:
+    print("i listan är " + i + " på plats "+str(lista.index(i)))
+
 
 import turtle
 def värdetabell(trtl ,x_1,x_2,x_3,y_1,y_2,y_3):

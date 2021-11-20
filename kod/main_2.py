@@ -18,17 +18,11 @@ def game_hub():
     flytt(trtl,40)
     trtl.write("Det finn en hel del roliga mattespel att välja mellan!", font=("Arial", 20, "italic"), align="left")
     flytt(trtl,30)
-    trtl.write("För x skriv in siffran n", font=("Arial", 13, "italic"), align="left")
-    flytt(trtl,25)
-    trtl.write("För x skriv in siffran n", font=("Arial", 13, "italic"), align="left")
-    flytt(trtl,25)
-    trtl.write("För x skriv in siffran n", font=("Arial", 13, "italic"), align="left")
-    flytt(trtl,25)
-    trtl.write("För x skriv in siffran n", font=("Arial", 13, "italic"), align="left")
-    flytt(trtl,25)
-    trtl.write("För x skriv in siffran n", font=("Arial", 13, "italic"), align="left")
-    flytt(trtl,25)
-    trtl.write("För x skriv in siffran n", font=("Arial", 13, "italic"), align="left")
+    minispel=["bestämning av x och y-kordinat av en punkt","bestämning av kvadrant en punkt befinner sig i","räta linjens ekvation (Y=kx+m)","värdetabelövning för räta linjer","att ge funktionsvärde på spesifika x värden i y=kx+m","potensialfunktioner","exponnsialfunktioner"]
+    for n in (minispel):
+        trtl.write("För "+ n +" skriv in siffran "+str(minispel.index(n)), font=("Arial", 10, "italic"), align="left")
+        flytt(trtl,15)
+
     flytt(trtl,60)
     trtl.write("När du känner dig färdig med ett minispel kan du", font=("Arial", 20, "italic"), align="left")
     flytt(trtl,40)
