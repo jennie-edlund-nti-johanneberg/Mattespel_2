@@ -1,7 +1,38 @@
 import turtle
 import time
 def minigames(user_choise):
-    print(user_choise)
+    if user_choise==1:
+        #tell text
+        #run program
+        import kordinater
+        print(user_choise)
+    elif user_choise==2:
+        #tell text
+        #run program
+        print(user_choise)
+    elif user_choise==3:
+        #tell text
+        #run program
+        print(user_choise)
+    elif user_choise==4:
+        #tell text
+        #run program
+        print(user_choise)
+    elif user_choise==5:
+        #tell text
+        #run program
+        print(user_choise)
+    elif user_choise==6:
+        #tell text
+        #run program
+        print(user_choise)
+    elif user_choise==7:
+        #tell text
+        #run program
+        print(user_choise)
+    else:
+        #run program
+        print(user_choise)
 
 def flytt(trtl, length):
     trtl.pu()
@@ -33,11 +64,14 @@ def game_hub():
     flytt(trtl,150)
     trtl.write("Lycka till!", font=("Arial", 80, "italic"), align="left")
 
-    time.sleep(10)
+    time.sleep(5)
     sc = turtle.Screen()
     user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
+    while user_input<0 or user_input>10:
+        user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
+    #lägg in undantagshanterin input=infinity
+    turtle.clearscreen()
     minigames(user_input)
-    turtle.done()
 
 game_hub()
 
