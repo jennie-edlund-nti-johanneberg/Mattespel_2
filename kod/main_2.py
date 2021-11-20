@@ -1,4 +1,7 @@
 import turtle
+import time
+def minigames(user_choise):
+    print(user_choise)
 
 def flytt(trtl, length):
     trtl.pu()
@@ -20,28 +23,20 @@ def game_hub():
     flytt(trtl,30)
     minispel=["bestämning av x och y-kordinat av en punkt","bestämning av kvadrant en punkt befinner sig i","räta linjens ekvation (Y=kx+m)","värdetabelövning för räta linjer","att ge funktionsvärde på spesifika x värden i y=kx+m","potensialfunktioner","exponnsialfunktioner"]
     for n in (minispel):
-        trtl.write("För "+ n +" skriv in siffran "+str(minispel.index(n)), font=("Arial", 10, "italic"), align="left")
-        flytt(trtl,15)
+        trtl.write("För "+ n +" skriv in siffran "+str(minispel.index(n)), font=("Arial", 12, "italic"), align="left")
+        flytt(trtl,20)
 
-    flytt(trtl,60)
+    flytt(trtl,40)
     trtl.write("När du känner dig färdig med ett minispel kan du", font=("Arial", 20, "italic"), align="left")
     flytt(trtl,40)
     trtl.write("återvända hit genom att svara XXX på någon fråga", font=("Arial", 20, "italic"), align="left")
     flytt(trtl,150)
     trtl.write("Lycka till!", font=("Arial", 80, "italic"), align="left")
 
-
-    #skriv välkomen till spel och hur man går vidare till minispel
-    #tar input t.ex nummer 1-8 vad de vill göra för minispel
-    #if sats på alla spel som följer
-    #if user_input ==1:
-    #   #förklara hur 1 är
-    #   kör filen för 1;a minispel
-    # elif user_input==2:
-    #   förklara hur 2 är
-    #   kör filen för 2:a minispel
-    #så vidare så vidare
-
+    time.sleep(10)
+    sc = turtle.Screen()
+    user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
+    minigames(user_input)
     turtle.done()
 
 game_hub()
