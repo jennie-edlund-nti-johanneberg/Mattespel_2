@@ -23,7 +23,6 @@ def right(score):
     trtl.hideturtle()
     time.sleep(2)
     trtl.clear()
-    return score
 
 #Körs ifall användare fick fel
 def wrong():
@@ -35,7 +34,7 @@ def wrong():
     trtl.clear()
 
 #Kollar om användaren har samma svar som facit
-def kolla(facitx, facity, trtl, score):
+def kolla(facitx, facity, trtl, scores):
 
     #Skälva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
@@ -44,9 +43,20 @@ def kolla(facitx, facity, trtl, score):
     #Tar in användarinput (svaren)
     while svary != None:
         try:
-            svarx = int(sc.numinput("Vad är x-kordinaten", "Ditt svar:"))
-            svary = int(sc.numinput("Vad är y-kordinaten", "Ditt svar:"))
-        except (TypeError, OverflowError):
+            svarx = (sc.textinput("Vad är x-kordinaten", "Ditt svar:")) #obs här är det numera text
+            if svarx == "return":
+                trtl.clear()
+                return 
+            svarx = int(svarx)#texten blir till siffra igen, om man skrev in annan text än return tar undantagshanteringen hand om det
+
+            svary = (sc.textinput("Vad är y-kordinaten", "Ditt svar:")) #obs här är det numera text
+            if svary == "return":
+                trtl.clear()
+                return 
+            
+            svary = int(svary)#texten blir till siffra igen, om man skrev in annan text än return tar undantagshanteringen hand om det
+
+        except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")
@@ -70,19 +80,20 @@ def kolla(facitx, facity, trtl, score):
 
     #Kollar ifall användaren hade rätt
     if facitx == svarx and facity == svary:
-        score += 1
-        newScore = right(score)
+        scores["koordinater"]+=1 #Lägger till ett poäng i dict från main
+        right(scores["koordinater"])#kör med globala poäng istället
     else:
+        scores["koordinater"] = 0 #kör med globala poäng istället
         wrong()
-        newScore = score
 
     #Rensar turtle + skickar vidare ny score
     trtl.clear()
-    padda(newScore)
-    sc.exitonclick()
+    padda(scores)
+    
+    print("done")
 
 #Gör själva griden
-def padda(score):
+def padda(scores):
     #Skapar sköldpadda + hastigheten på den
     trtl = turtle.Turtle()
     trtl.speed(0)
@@ -155,9 +166,7 @@ def padda(score):
     trtl.hideturtle()
 
     #Klar med sköldpadda
-    kolla(x, y, trtl, score)
+    kolla(x, y, trtl, scores)
 
 def omgång():
     print(" ")
-
-padda(0)

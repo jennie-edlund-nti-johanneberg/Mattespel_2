@@ -96,7 +96,7 @@ def check(facit_kvad, trtl, score):
     sc.exitonclick()
 
 #Gör kordinatsystemet och kör allt 
-def game(score):
+def game(scores):
     #Skapar trtl + maxhastigheten på den
     trtl = turtle.Turtle()
     trtl.speed(0)
@@ -165,9 +165,9 @@ def game(score):
 
     #Klar med sköldpadda
     facit=facitet(x, y)
-    check(facit, trtl, score)
+    check(facit, trtl, scores["kvadrant"])
 
-game(0)
+
 
 
 

@@ -1,11 +1,17 @@
 import turtle
 import time
+scores = {"koordinater":0,"kvadrant":0, "potensiell":0, "tabellGraf":0}
+
 def minigames(user_choise):
-    if user_choise==1:
+    global scores
+    if user_choise==0:
         #tell text
-        #run program
         import kordinater
-        print(user_choise)
+        kordinater.padda(scores)
+    elif user_choise==1:
+        #tell text
+        import kvadrant
+        kvadrant.game(scores)
     elif user_choise==2:
         #tell text
         #run program
@@ -26,10 +32,6 @@ def minigames(user_choise):
         #tell text
         #run program
         print(user_choise)
-    elif user_choise==7:
-        #tell text
-        #run program
-        print(user_choise)
     else:
         #run program
         print(user_choise)
@@ -41,6 +43,7 @@ def flytt(trtl, length):
 
 def game_hub():
     trtl = turtle.Turtle()
+
     trtl.speed(0)
     trtl.ht()
     trtl.pu()
@@ -64,14 +67,17 @@ def game_hub():
     flytt(trtl,150)
     trtl.write("Lycka till!", font=("Arial", 80, "italic"), align="left")
 
-    time.sleep(5)
+    time.sleep(1)
     sc = turtle.Screen()
     user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
     while user_input<0 or user_input>10:
         user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
     #lägg in undantagshanterin input=infinity
     turtle.clearscreen()
+    
     minigames(user_input)
+    turtle.clear()
+    game_hub()
 
 game_hub()
 
