@@ -48,7 +48,7 @@ def kolla(facity, trtl, score):
     #Tar in användarinput (svaren)
     while svary != None:
         try:
-            svary = int(sc.numinput("Vad är y?", "Ditt svar:"))
+            svary = float(sc.numinput("Vad är y?", "Ditt svar:"))
         except (TypeError, OverflowError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
@@ -101,6 +101,8 @@ def ekvation_y(trtl, score):
     x = randomNumber()
     y = c*x**a
 
+    print(y)
+
     pen(trtl, -90, 30, "black")
     trtl.write(f"y = {c} * (x)^{a}",font=("Verdana", 12, "bold"))
 
@@ -124,6 +126,8 @@ def ekvation_x(trtl, score):
     y = randomNumber()
 
     x = (y/c)**(1/a)
+
+    print(x)
 
 
     pen(trtl, -90, 30, "black")
