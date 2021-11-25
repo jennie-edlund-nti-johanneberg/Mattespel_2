@@ -49,7 +49,7 @@ def wrong():
 
 
 #Kollar om användaren har samma svar som facit
-def check(facit_kvad, trtl, score):
+def check(facit_kvad, trtl, scores):
 
     #Skärmen blir variablen "sc"    
     sc = turtle.Screen()
@@ -58,8 +58,12 @@ def check(facit_kvad, trtl, score):
     #Tar in användarinput (svaren)
     while user_guess != None:
         try:
-            user_guess = int(sc.numinput("Vilken kavdrant befinner sig punket i? 1-4", "Ditt svar:"))
-        except (TypeError, OverflowError):
+            user_guess = (sc.textinput("Vilken kvadrant", "Ditt svar:")) #obs här är det numera text
+            if user_guess == "return":
+                trtl.clear()
+                return 
+            user_guess = int(user_guess)
+        except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")
@@ -83,17 +87,15 @@ def check(facit_kvad, trtl, score):
 
     #Kollar ifall användaren hade rätt
     if user_guess==facit_kvad:
-        score += 1
-        newScore = right(score)
+        scores["kvadrant"] += 1
+        right(scores["kvadrant"])
     else:
-        score = 0
+        scores["kvadrant"] = 0
         wrong()
-        newScore = score
 
     #Rensar turtle + skickar vidare ny score
     trtl.clear()
-    game(newScore)
-    sc.exitonclick()
+    game(scores)
 
 #Gör kordinatsystemet och kör allt 
 def game(scores):
@@ -165,10 +167,4 @@ def game(scores):
 
     #Klar med sköldpadda
     facit=facitet(x, y)
-    check(facit, trtl, scores["kvadrant"])
-
-
-
-
-
-
+    check(facit, trtl, scores)

@@ -89,8 +89,6 @@ def kolla(facitx, facity, trtl, scores):
     #Rensar turtle + skickar vidare ny score
     trtl.clear()
     padda(scores)
-    
-    print("done")
 
 #Gör själva griden
 def padda(scores):
