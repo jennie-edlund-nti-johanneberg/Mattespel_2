@@ -1,6 +1,6 @@
 import turtle
 import time
-scores = {"koordinater":0,"kvadrant":0, "potensiell":0, "tabellGraf":0}
+scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "tabellGraf":0}
 
 def minigames(user_choise):
     global scores
@@ -14,8 +14,8 @@ def minigames(user_choise):
         kvadrant.game(scores)
     elif user_choise==2:
         #tell text
-        #run program
-        print(user_choise)
+        import givenGraf
+        givenGraf.grid(scores)
     elif user_choise==3:
         #tell text
         #run program
