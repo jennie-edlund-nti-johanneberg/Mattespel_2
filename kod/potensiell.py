@@ -5,11 +5,11 @@ import time
 
 #Ger slumpade nummer mellan -10 och 10
 def randomNumber():
-    return (int(random.randint(-15, 15)))
+    return (int(random.randint(-5, 5)))
 
 #Ger slumpade nummer mellan -5 och 5
 def randomNumber_nr2():
-    return (int(random.randint(0, 5)))
+    return (int(random.randint(1, 2)))
 
 #Ger turtle position och färg
 def pen(trtl, posx, posy, color):
@@ -101,8 +101,6 @@ def ekvation_y(trtl, score):
     x = randomNumber()
     y = c*x**a
 
-    print(y)
-
     pen(trtl, -90, 30, "black")
     trtl.write(f"y = {c} * (x)^{a}",font=("Verdana", 12, "bold"))
 
@@ -112,33 +110,6 @@ def ekvation_y(trtl, score):
     fyrkant(trtl)
 
     kolla(y, trtl, score)
-
-#Gör själva ekvationen
-def ekvation_x(trtl, score):
-    trtl.penup()
-
-    c = randomNumber()
-    a = randomNumber_nr2()
-
-    while a == 0:
-            a = randomNumber_nr2()
-
-    y = randomNumber()
-
-    x = (y/c)**(1/a)
-
-    print(x)
-
-
-    pen(trtl, -90, 30, "black")
-    trtl.write(f"y = {c} * (x)^{a}",font=("Verdana", 12, "bold"))
-
-    pen(trtl, -90, 0, "black")
-    trtl.write(f"Vad är x om y = {y}",font=("Verdana", 12, "bold"))
-
-    fyrkant(trtl)
-
-    kolla(x, trtl, score)
 
 #Gör själva griden
 def grid(score):
@@ -153,13 +124,6 @@ def grid(score):
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    # temp = int(random.randint(0, 1))
-
-    temp = 0
-
-    if temp == 1:
-        ekvation_y(trtl, score)
-    else:
-        ekvation_x(trtl,score)
+    ekvation_y(trtl, score)
 
 grid(0)
