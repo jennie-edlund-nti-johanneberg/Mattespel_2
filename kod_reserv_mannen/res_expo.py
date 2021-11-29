@@ -5,11 +5,11 @@ import time
 
 #Ger slumpade nummer mellan -10 och 10
 def randomNumber():
-    return (int(random.randint(-5, 5)))
+    return (int(random.randint(-15, 15)))
 
 #Ger slumpade nummer mellan -5 och 5
 def randomNumber_nr2():
-    return (int(random.randint(1, 2)))
+    return (int(random.randint(0, 5)))
 
 #Ger turtle position och färg
 def pen(trtl, posx, posy, color):
@@ -48,7 +48,7 @@ def kolla(facity, trtl, score):
     #Tar in användarinput (svaren)
     while svary != None:
         try:
-            svary = float(sc.numinput("Vad är y?", "Ditt svar:"))
+            svary = int(sc.numinput("Vad är y?", "Ditt svar:"))
         except (TypeError, OverflowError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
@@ -92,17 +92,24 @@ def fyrkant(trtl):
     trtl.rt(90)
     trtl.fd(80)
 
-#Gör själva ekvationen
-def ekvation_y(trtl, score):
+#Plottar själva grafen
+def ekvation(trtl, score):
     trtl.penup()
 
     c = randomNumber()
-    a = randomNumber_nr2()
-    x = randomNumber()
-    y = c*x**a
+    a = randomNumber()
+    x = randomNumber_nr2()
+
+    print(c)
+    print(a)
+    print(x)
+
+    y = c*a**x
+
+    print(y)
 
     pen(trtl, -90, 30, "black")
-    trtl.write(f"y = {c} * (x)^{a}",font=("Verdana", 12, "bold"))
+    trtl.write(f"y = {c} * ({a})^x",font=("Verdana", 12, "bold"))
 
     pen(trtl, -90, 0, "black")
     trtl.write(f"Vad är y om x = {x}",font=("Verdana", 12, "bold"))
@@ -121,9 +128,12 @@ def grid(score):
     pen(trtl, -50, -50, "black")
     trtl.write("y = Ca^x",font=("Verdana", 12, "bold"))
 
+    #Skölpaddan riktas mot höger
+    # trtl.setheading(0)
+
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    ekvation_y(trtl, score)
+    ekvation(trtl, score)
 
 grid(0)
