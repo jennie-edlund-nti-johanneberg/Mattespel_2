@@ -55,7 +55,6 @@ def kolla(facitk, facitm, trtl, scores):
                 trtl.clear()
                 return 
             svarm = int(svarm)
-
         except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
@@ -177,4 +176,3 @@ def grid(scores):
     trtl.hideturtle()
 
     plotter(trtl, range(-250, 250), scores)
-

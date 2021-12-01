@@ -1,6 +1,6 @@
 import turtle
 import time
-scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "tabellGraf":0}
+scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0}
 
 def minigames(user_choise):
     global scores
@@ -18,11 +18,13 @@ def minigames(user_choise):
         givenGraf.grid(scores)
     elif user_choise==3:
         #tell text
-        #run program
+        import funktio_tabell
+        funktio_tabell.game(scores)
         print(user_choise)
     elif user_choise==4:
         #tell text
-        #run program
+        import x_for_y
+        x_for_y.grid(scores)
         print(user_choise)
     elif user_choise==5:
         #tell text
@@ -63,7 +65,7 @@ def game_hub():
     flytt(trtl,40)
     trtl.write("När du känner dig färdig med ett minispel kan du", font=("Arial", 20, "italic"), align="left")
     flytt(trtl,40)
-    trtl.write("återvända hit genom att svara XXX på någon fråga", font=("Arial", 20, "italic"), align="left")
+    trtl.write("återvända hit genom att svara return på någon fråga", font=("Arial", 20, "italic"), align="left")
     flytt(trtl,150)
     trtl.write("Lycka till!", font=("Arial", 80, "italic"), align="left")
 

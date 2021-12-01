@@ -36,7 +36,7 @@ def wrong():
     trtl.clear()
 
 #Kollar om användaren har samma svar som facit
-def kolla(facitk, facitm, trtl, score):
+def kolla(facitk, facitm, trtl, scores):
 
     #Skälva skärmen läggs i variablen "sc"
     sc = turtle.Screen()
@@ -49,8 +49,12 @@ def kolla(facitk, facitm, trtl, score):
     #Tar in användarinput (svaret)
     while svary != None:
         try:
-            svary = int(sc.numinput(f"Vad är y när x = {x}", "Ditt svar:"))
-        except (TypeError, OverflowError):
+            svary = (sc.textinput(f"Vad är y när x = {x}", "Ditt svar:")) #obs här är det numera text
+            if svary == "return":
+                trtl.clear()
+                return 
+            svary = int(svary)
+        except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")
@@ -74,19 +78,19 @@ def kolla(facitk, facitm, trtl, score):
 
     #Kollar ifall användaren hade rätt
     if facity == svary:
-        score += 1
-        newScore = right(score)
+        scores["x_for_y"] += 1
+        right(scores["x_for_y"])
     else:
+        scores["x_for_y"]
         wrong()
-        newScore = score
 
     #Rensar turtle + skickar vidare ny score
     trtl.clear()
-    grid(newScore)
-    sc.exitonclick()
+    grid(scores)
+    #sc.exitonclick() detta måste bort för att de ska funka men då kan man trycka på nej när man fyller i sina värden och få typerror som inte tas upp av undantagshantering
 
 #Plottar själva grafen
-def plotter(trtl, x_range, score):
+def plotter(trtl, x_range, scores):
     trtl.penup()
 
     k = randomNumber()
@@ -97,10 +101,10 @@ def plotter(trtl, x_range, score):
         trtl.goto(x, y)
         trtl.pendown()
 
-    kolla(k, m, trtl, score)
+    kolla(k, m, trtl, scores)
 
 #Gör själva griden
-def grid(score):
+def grid(scores):
     #Skapar sköldpadda + hastigheten på den
     trtl = turtle.Turtle()
     trtl.speed(0)
@@ -160,6 +164,5 @@ def grid(score):
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    plotter(trtl, range(-250, 250), score)
+    plotter(trtl, range(-250, 250), scores)
 
-grid(0)

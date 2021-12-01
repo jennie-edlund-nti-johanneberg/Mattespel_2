@@ -41,7 +41,7 @@ def wrong():
     trtl.clear()
 
 #ritar värdetabell
-def värdetabell(trtl,score ,x_1,x_2,x_3,y_1,y_2,y_3):
+def värdetabell(trtl,scores ,x_1,x_2,x_3,y_1,y_2,y_3):
     trtl.pu()
     trtl.setx(-250)
     trtl.sety(250)
@@ -111,11 +111,11 @@ def värdetabell(trtl,score ,x_1,x_2,x_3,y_1,y_2,y_3):
     trtl.pu()
     trtl.ht()
 
-    kolla(trtl, x_1, x_2, y_1, y_2, score)
+    kolla(trtl, x_1, x_2, y_1, y_2, scores)
 
 
 #Kollar om användaren har samma svar som facit
-def kolla(trtl, x_1, x_2, y_1, y_2, score):
+def kolla(trtl, x_1, x_2, y_1, y_2, scores):
 
     #Själva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
@@ -127,9 +127,18 @@ def kolla(trtl, x_1, x_2, y_1, y_2, score):
     #användargiss
     while svark != None:
         try:
-            svark = int(sc.numinput("Vad är k-konstanten", "Ditt svar:"))
-            svarm = int(sc.numinput("Vad är m-konstanten", "Ditt svar:"))
-        except (TypeError, OverflowError):
+            svark = (sc.textinput("Vad är k-konstanten", "Ditt svar:"))
+            if svark == "return":
+                trtl.clear()
+                return 
+            svark = int(svark)
+            
+            svarm = (sc.textinput("Vad är m-konstanten", "Ditt svar:")) #obs här är det numera text
+            if svarm == "return":
+                trtl.clear()
+                return 
+            svarm = int(svarm)
+        except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")
@@ -163,22 +172,24 @@ def kolla(trtl, x_1, x_2, y_1, y_2, score):
     trtl.hideturtle()
     time.sleep(3)
 
+#fixa hela undantagshanteringen
+
     #Kollar ifall användaren hade rätt
     if facitk == svark and facitm == svarm:
-        score += 1
-        newScore = right(score)
+        scores["funktion_tabell"] += 1
+        right(scores["funktion_tabell"])
     else:
         wrong()
-        newScore = score
+        scores["funktion_tabell"]=0
 
     #Rensar turtle + skickar vidare ny score
     trtl.clear()
-    game(newScore)
-    sc.exitonclick()
+    game(scores)
+    #sc.exitonclick() behöver ta bort
 
 
 #Gör själva griden
-def game(score):
+def game(scores):
     #Skapar sköldpadda + hastigheten på den
     trtl = turtle.Turtle()
     trtl.speed(0)
@@ -251,12 +262,11 @@ def game(score):
     y_2 = k*x_2+m
     y_3 = k*x_3+m
     #Plottar värdetabellen
-    värdetabell(trtl,score ,x_1,x_2,x_3,y_1,y_2,y_3)
+    värdetabell(trtl,scores ,x_1,x_2,x_3,y_1,y_2,y_3)
 
     #Gömmer sköldpadda
     trtl.hideturtle()
-    turtle.done()
+    #turtle.done() bror bort med detta åsså
 
     #plotter(trtl, range(-250, 250), score)
 
-game(0)
