@@ -25,11 +25,10 @@ def minigames(user_choise):
         #tell text
         import x_for_y
         x_for_y.grid(scores)
-        print(user_choise)
     elif user_choise==5:
         #tell text
-        #run program
-        print(user_choise)
+        import potensiell
+        potensiell.grid(scores)
     elif user_choise==6:
         #tell text
         #run program
@@ -83,6 +82,7 @@ def game_hub():
 
 game_hub()
 
+#undantagshantering så man inte kan trycka cancle
 
 #import funktio_tabell
 #import givenGraf
