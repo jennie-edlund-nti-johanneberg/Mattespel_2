@@ -1,6 +1,6 @@
 import turtle
 import time
-scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0}
+scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0, "expo": 0}
 
 def minigames(user_choise):
     global scores
@@ -31,8 +31,8 @@ def minigames(user_choise):
         potensiell.grid(scores)
     elif user_choise==6:
         #tell text
-        #run program
-        print(user_choise)
+        import expo
+        expo.grid(scores)
     else:
         #run program
         print(user_choise)
@@ -69,11 +69,20 @@ def game_hub():
     trtl.write("Lycka till!", font=("Arial", 80, "italic"), align="left")
 
     time.sleep(1)
+
+    #ta in user input oc se till att de är en intiger mellan 0 0ch (6+1) hehe annars få dem att skriva in igen
     sc = turtle.Screen()
-    user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
-    while user_input<0 or user_input>10:
-        user_input=int(sc.numinput("vart vill du 0-10","Ditt val:"))
-    #lägg in undantagshanterin input=infinity
+    user_input=0
+    while user_input != None:
+        try:
+            user_input = int(sc.numinput("vart vill du 0-7","Ditt val:"))
+            if not 0 <= user_input <= 7:
+                raise ValueError
+        except (TypeError, OverflowError, ValueError):
+            time.sleep(1)
+            continue
+        break
+
     turtle.clearscreen()
     
     minigames(user_input)
