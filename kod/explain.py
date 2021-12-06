@@ -192,4 +192,28 @@ def expo_explain():
     trtl.ht()
     window.exitonclick()
 
-expo_explain()
+def potensiell_explain():
+    window = turtle.Screen()
+    window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
+
+    trtl = turtle.Turtle()
+
+    trtl.speed(0)
+    trtl.ht()
+    pos(trtl, -540, 200)
+    trtl.rt(90)
+    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en potensfunktion", font=('arial',20,'bold'), align='left')
+
+    pos(trtl, -540, 150)
+    trtl.write("Potensfunktioner skrivs ut y = C*x^a och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 100)
+    trtl.write("Här kan miniräknare vara ett bra hjälpmedel!", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 50)
+    trtl.write("Exemple kan vara y = 3*x^4 där x = 2. Detta ger oss y = 3*2^4 = 48.", font=('arial',15,'bold'), align='left')
+
+    trtl.ht()
+    window.exitonclick()
+
+potensiell_explain()
