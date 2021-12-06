@@ -40,7 +40,7 @@ def wrong():
     trtl.clear()
 
 #Kollar om användaren har samma svar som facit
-def kolla(facity, trtl, score):
+def kolla(facity, trtl, scores):
     #Skälva skärmen läggs i variablen "sc"
     sc = turtle.Screen()
     svary = 0
@@ -48,8 +48,12 @@ def kolla(facity, trtl, score):
     #Tar in användarinput (svaren)
     while svary != None:
         try:
-            svary = float(sc.numinput("Vad är y?", "Ditt svar:"))
-        except (TypeError, OverflowError):
+            svary = (sc.textinput("Vad är y?", "Ditt svar:"))
+            if svary == "return":
+                trtl.clear()
+                return 
+            svary = float(svary)
+        except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, -85, 100, "grey")
@@ -71,16 +75,17 @@ def kolla(facity, trtl, score):
 
     #Kollar ifall användaren hade rätt
     if facity == svary:
-        score += 1
-        newScore = right(score)
+        scores["potensiell"] += 1
+        right(scores["potensiell"])
     else:
+        scores["potensiell"]= 0
         wrong()
-        newScore = score
+       
 
     #Rensar turtle + skickar vidare ny score
     trtl.clear()
-    grid(newScore)
-    sc.exitonclick()
+    grid(scores)
+    #sc.exitonclick()
 
 def fyrkant(trtl):
     pen(trtl, -110, 60, "red")
@@ -93,7 +98,7 @@ def fyrkant(trtl):
     trtl.fd(80)
 
 #Gör själva ekvationen
-def ekvation_y(trtl, score):
+def ekvation_y(trtl, scores):
     trtl.penup()
 
     c = randomNumber()
@@ -109,10 +114,10 @@ def ekvation_y(trtl, score):
 
     fyrkant(trtl)
 
-    kolla(y, trtl, score)
+    kolla(y, trtl, scores)
 
 #Gör själva griden
-def grid(score):
+def grid(scores):
     #Skapar sköldpadda + hastigheten på den
     trtl = turtle.Turtle()
     trtl.speed(0)
@@ -124,6 +129,5 @@ def grid(score):
     #Gömmer sköldpadda
     trtl.hideturtle()
 
-    ekvation_y(trtl, score)
+    ekvation_y(trtl, scores)
 
-grid(0)
