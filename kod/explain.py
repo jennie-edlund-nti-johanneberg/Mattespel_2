@@ -154,7 +154,6 @@ def givenGraf_explain():
     pos(trtl, -540, -100)
     trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'bold'), align='left')
 
-
     pos(trtl, -540, -150)
     trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'bold'), align='left')
 
@@ -163,7 +162,6 @@ def givenGraf_explain():
 
     pos(trtl, -540, -250)
     trtl.write("Tycker du detta är svårt kan det vara bra att träna på kordinater mer!", font=('arial',15,'bold'), align='left')
-
 
     trtl.ht()
     window.exitonclick()
@@ -217,6 +215,7 @@ def potensiell_explain():
     window.exitonclick()
 
 def x_for_y_explain():
+
     window = turtle.Screen()
     window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
 
@@ -246,8 +245,50 @@ def x_for_y_explain():
     pos(trtl, -540, -100)
     trtl.write("Om detta är svårt kan det vara bra att kolla lite extra på räta linjens ekvation.", font=('arial',15,'bold'), align='left')
 
+    trtl.ht()
+    window.exitonclick()
+
+def funktio_tabell_explain():
+
+    window = turtle.Screen()
+    window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
+
+    trtl = turtle.Turtle()
+
+    trtl.speed(0)
+    trtl.ht()
+    pos(trtl, -540, 200)
+    trtl.rt(90)
+    trtl.write("Detta spelet går ut på att du skriver in vilken k-värde och m-värde funktionen", font=('arial',20,'bold'), align='left')
+
+    pos(trtl, -540, 150)
+    trtl.write("y = kx+m har genom en värdetabell", font=('arial',20,'bold'), align='left')
+
+    pos(trtl, -540, 100)
+    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 50)
+    trtl.write("Välj två x- och y-världen (samma rad) från tabellen. Ta sedan y-värdet från ena raden subtraherat med den andras.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 0)
+    trtl.write("Dividera sedan värdet du får med x-värdet från (samma) första rad subtraherat med den andras x-värde.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -50)
+    trtl.write("Ett exempel med värderna x1 = 2, y1 = 2 och x2 = 4, y2 = 8.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -100)
+    trtl.write("Detta ger oss ∆y/∆x = (y2-y1)/(x2-x1) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -150)
+    trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -200)
+    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -250)
+    trtl.write("Om inte tabellen visar vad y-värdet är när x = 0 får du räkna ut m-värdet själv. Detta mha k-värdet.", font=('arial',15,'bold'), align='left')
 
     trtl.ht()
     window.exitonclick()
 
-x_for_y_explain()
+funktio_tabell_explain()
