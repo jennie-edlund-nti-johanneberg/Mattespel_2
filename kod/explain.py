@@ -216,4 +216,38 @@ def potensiell_explain():
     trtl.ht()
     window.exitonclick()
 
-potensiell_explain()
+def x_for_y_explain():
+    window = turtle.Screen()
+    window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
+
+    trtl = turtle.Turtle()
+
+    trtl.speed(0)
+    trtl.ht()
+    pos(trtl, -540, 200)
+    trtl.rt(90)
+    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en räta linjens ekvation", font=('arial',20,'bold'), align='left')
+
+    pos(trtl, -540, 150)
+    trtl.write("Räta linjens ekvation skrivs ut y = kx+m och en sådan funktion kommer att ritas ut.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 100)
+    trtl.write("Du kommer sedan att få ut ett x-värde och du får då mha grafen läsa av y-värdet där x-värdet är.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 50)
+    trtl.write("Ibland kan linjen vara utanför grafen och då är det upp till dig att räkna ut vad y-värdet är.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, 0)
+    trtl.write("Tex ser du att funktionen har ett k-värde på 3 och y = 4 när x = 5.", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -50)
+    trtl.write("Då kan vi räkna ut vad y-värdet är när x = 6 genom att ta 4+3 = 7. Svar: y = 7", font=('arial',15,'bold'), align='left')
+
+    pos(trtl, -540, -100)
+    trtl.write("Om detta är svårt kan det vara bra att kolla lite extra på räta linjens ekvation.", font=('arial',15,'bold'), align='left')
+
+
+    trtl.ht()
+    window.exitonclick()
+
+x_for_y_explain()
