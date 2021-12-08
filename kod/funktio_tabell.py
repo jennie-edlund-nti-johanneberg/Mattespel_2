@@ -120,14 +120,14 @@ def kolla(trtl, x_1, x_2, y_1, y_2, scores):
 
     #Själva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
-    svark = 0
-    svarm=0
+    svark = None
+    svarm = None
     #skapa facit
-    facitk = int((y_2-y_1)/(x_2-x_1))#delar med 0 om de gissat 0 fixa de
+    facitk = int((y_2-y_1)/(x_2-x_1))#delar med 0 om de gissat 0 har fixa de
     facitm = int(y_1-facitk*x_1)
 
     #användargiss
-    while svark != None:
+    while svark == None:
         try:
             svark = (sc.textinput("Vad är k-konstanten", "Ditt svar:"))
             if svark == "return":
@@ -147,8 +147,7 @@ def kolla(trtl, x_1, x_2, y_1, y_2, scores):
             trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
             time.sleep(0.5)
             trtl_2.clear()
-            continue
-        break
+            svark = None
 
     
     #Skriver ut användarens svar

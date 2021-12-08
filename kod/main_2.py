@@ -1,11 +1,13 @@
 import turtle
 import time
+#import explain
 scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0, "expo": 0}
 
 def minigames(user_choise):
     global scores
     if user_choise==0:
         #tell text
+        #explain.kordinat_explain()
         import kordinater
         kordinater.padda(scores)
     elif user_choise==1:
@@ -20,7 +22,6 @@ def minigames(user_choise):
         #tell text
         import funktio_tabell
         funktio_tabell.game(scores)
-        print(user_choise)
     elif user_choise==4:
         #tell text
         import x_for_y
