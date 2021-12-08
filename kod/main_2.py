@@ -1,13 +1,13 @@
 import turtle
 import time
-#import explain
+import explain
 scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0, "expo": 0}
 
 def minigames(user_choise):
     global scores
     if user_choise==0:
         #tell text
-        #explain.kordinat_explain()
+        #explain.kordinat_explain() fixa return i förklaring först
         import kordinater
         kordinater.padda(scores)
     elif user_choise==1:

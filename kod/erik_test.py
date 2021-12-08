@@ -150,4 +150,10 @@ def grid():
 
     värdetabell(trtl,1,2,3,6,7,8)
     turtle.done()
-grid()
+
+#def test_clear():
+#    trtl=turtle.Turtle
+#    widow=turtle.Screen()
+#    window.onscreenclick(trtl.clear())    den aoutoklickar 
+#    return
+#    on klick (trtl.clear, return)

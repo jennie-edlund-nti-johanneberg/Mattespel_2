@@ -55,9 +55,10 @@ def kordinat_explain():
     pos(trtl, 10, -5)
     trtl.write("y",font=("Verdana", 12, "bold"))
 
-
     trtl.ht()
-    window.exitonclick()
+    #window.onscreenclick(trtl.clear())    #den aoutoklickar? vad är window? hur delectar jag hela canvas istället för window?
+    #return
+    #on klick (trtl.clear, return) #den ska i slutet rensa canvas och retunera(gå ur def så den landar tillbaka i main_2)
 
 def kvadrant_explain():
     window = turtle.Screen()
@@ -290,5 +291,3 @@ def funktio_tabell_explain():
 
     trtl.ht()
     window.exitonclick()
-
-funktio_tabell_explain()
