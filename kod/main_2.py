@@ -28,10 +28,12 @@ def minigames(user_choise):
         x_for_y.grid(scores)
     elif user_choise==5:
         #tell text
+        #fixa så den inte skriver ut i terminalen
         import potensiell
         potensiell.grid(scores)
     elif user_choise==6:
         #tell text
+        #fixa så den inte skriver ut i terminalen
         import expo
         expo.grid(scores)
     else:
