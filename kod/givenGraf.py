@@ -39,10 +39,10 @@ def wrong():
 def kolla(facitk, facitm, trtl, scores):
     #Skälva skärmen läggs i variablen "sc"
     sc = turtle.Screen()
-    svark = 0
-
+    svark = None
+    svarm = None
     #Tar in användarinput (svaren)
-    while svark != None:
+    while svark == None:
         try:
             svark = (sc.textinput("Vad är k-konstanten", "Ditt svar:"))
             if svark == "return":
@@ -62,8 +62,8 @@ def kolla(facitk, facitm, trtl, scores):
             trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
             time.sleep(0.5)
             trtl_2.clear()
-            continue
-        break
+            svark = None
+        
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
