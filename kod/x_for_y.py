@@ -44,10 +44,10 @@ def kolla(facitk, facitm, trtl, scores):
     #Hämtar  random siffra och tar fram det rätta svaret
     x = randomNumber()
     facity = facitk*x+facitm
-    svary = 0
+    svary = None
 
     #Tar in användarinput (svaret)
-    while svary != None:
+    while svary == None:
         try:
             svary = (sc.textinput(f"Vad är y när x = {x}", "Ditt svar:")) #obs här är det numera text
             if svary == "return":
@@ -61,8 +61,7 @@ def kolla(facitk, facitm, trtl, scores):
             trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
             time.sleep(0.5)
             trtl_2.clear()
-            continue
-        break
+            svary = None
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")
