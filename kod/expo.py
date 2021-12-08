@@ -43,10 +43,10 @@ def wrong():
 def kolla(facity, trtl, scores):
     #Skälva skärmen läggs i variablen "sc"
     sc = turtle.Screen()
-    svary = 0
+    svary = None
 
     #Tar in användarinput (svaren)
-    while svary != None:
+    while svary == None:
         try:
             svary = (sc.textinput("Vad är y-kordinaten", "Ditt svar:")) 
             if svary == "return":
@@ -61,8 +61,7 @@ def kolla(facity, trtl, scores):
             trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
             time.sleep(0.5)
             trtl_2.clear()
-            continue
-        break
+            svary = None
 
     pen(trtl, -240, 225, "black")
     trtl.write(f"Ditt svar: y = {svary}",font=("Verdana", 12, "bold"))
