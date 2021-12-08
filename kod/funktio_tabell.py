@@ -47,67 +47,68 @@ def värdetabell(trtl,scores ,x_1,x_2,x_3,y_1,y_2,y_3):
     trtl.sety(250)
     trtl.pd()
     trtl.color("black")
-    trtl.sety(150)
-    trtl.setx(-200)
+    trtl.sety(50)
+    trtl.setx(-150)
     trtl.sety(250)
     trtl.setx(-250)
     for i in range (4):
         trtl.setx(-250)
-        trtl.sety(250-(50*i/2))
+        trtl.sety(250-(100*i/2))
         trtl.pd()
-        trtl.fd(50)
+        trtl.fd(100)
         trtl.pu()
-    trtl.setx(-225)
+    trtl.setx(-200)
     trtl.sety(250)
     trtl.lt(270)
     trtl.pd()
-    trtl.fd(100)
+    trtl.fd(200)
     trtl.pu()
 
-    
-    trtl.setpos(-240,230)
+    #stort s
+    trtl.setpos(-235,210)
     trtl.pendown()
-    trtl.write("x",font=("Verdana", 10, "bold"))
+    trtl.write("x",font=("Verdana", 25, "bold"))
     trtl.pu()
-        
-    trtl.setpos(-215,230)
+    #stort y
+    trtl.setpos(-190,210)
     trtl.pendown()
-    trtl.write("y",font=("Verdana", 10, "bold"))
+    trtl.write("y",font=("Verdana", 25, "bold"))
 
     #x-values
     
     trtl.pu()
-    trtl.setpos(-240,230-(25*1))
+    trtl.setpos(-240,220-(50*1))
+    trtl.write(f"{x_1}",font=("Verdana", 15, "bold"))
     trtl.pendown()
-    trtl.write(f"{x_1}",font=("Verdana", 10, "bold"))
+    
     
     trtl.pu()
-    trtl.setpos(-240,230-(25*2))
+    trtl.setpos(-240,220-(50*2))
     trtl.pendown()
-    trtl.write(f"{x_2}",font=("Verdana", 10, "bold"))
+    trtl.write(f"{x_2}",font=("Verdana", 15, "bold"))
     trtl.pu()
     
-    trtl.setpos(-240,230-(25*3))
+    trtl.setpos(-240,220-(50*3))
     trtl.pendown()
-    trtl.write(f"{x_3}",font=("Verdana", 10, "bold"))
+    trtl.write(f"{x_3}",font=("Verdana", 15, "bold"))
     trtl.pu()
 
     #y-values
        
     trtl.pu()
-    trtl.setpos(-220,230-(25*1))
+    trtl.setpos(-195,220-(50*1))
     trtl.pendown()
-    trtl.write(f"{y_1}",font=("Verdana", 10, "bold"))
+    trtl.write(f"{y_1}",font=("Verdana", 15, "bold"))
     
     trtl.pu()
-    trtl.setpos(-220,230-(25*2))
+    trtl.setpos(-195,220-(50*2))
     trtl.pendown()
-    trtl.write(f"{y_2}",font=("Verdana", 10, "bold"))
+    trtl.write(f"{y_2}",font=("Verdana", 15, "bold"))
     trtl.pu()
     
-    trtl.setpos(-220,230-(25*3))
+    trtl.setpos(-195,220-(50*3))
     trtl.pendown()
-    trtl.write(f"{y_3}",font=("Verdana", 10, "bold"))
+    trtl.write(f"{y_3}",font=("Verdana", 15, "bold"))
     trtl.pu()
     trtl.ht()
 
@@ -120,6 +121,7 @@ def kolla(trtl, x_1, x_2, y_1, y_2, scores):
     #Själva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
     svark = 0
+    svarm=0
     #skapa facit
     facitk = int((y_2-y_1)/(x_2-x_1))#delar med 0 om de gissat 0 fixa de
     facitm = int(y_1-facitk*x_1)
@@ -269,4 +271,3 @@ def game(scores):
     #turtle.done() bror bort med detta åsså
 
     #plotter(trtl, range(-250, 250), score)
-

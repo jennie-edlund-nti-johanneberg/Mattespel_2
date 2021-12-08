@@ -1,5 +1,4 @@
 #Erik
-import math
 import time
 import random
 import turtle
@@ -53,25 +52,25 @@ def check(facit_kvad, trtl, scores):
 
     #Skärmen blir variablen "sc"    
     sc = turtle.Screen()
-    user_guess = 0
+    user_guess = None
 
     #Tar in användarinput (svaren)
-    while user_guess != None:
+    while user_guess == None:
         try:
             user_guess = (sc.textinput("Vilken kvadrant", "Ditt svar:")) #obs här är det numera text
             if user_guess == "return":
                 trtl.clear()
-                return 
+                return
             user_guess = int(user_guess)
         except (TypeError, OverflowError, ValueError):
             trtl_2 = turtle.Turtle()
             trtl_2.hideturtle()
             pen(trtl_2, 50, 100, "grey")
-            trtl_2.write("Testa igen",font=("Verdana", 20, "bold"))
+            trtl_2.write("Testa igen", font=("Verdana", 20, "bold"))
             time.sleep(0.5)
             trtl_2.clear()
-            continue
-        break
+            user_guess = None
+        
 
     #Skriver ut användarens svar
     pen(trtl, -240, 225, "black")

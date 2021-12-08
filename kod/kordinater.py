@@ -38,6 +38,7 @@ def kolla(facitx, facity, trtl, scores):
 
     #Skälva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
+    svarx = 0
     svary = 0
 
     #Tar in användarinput (svaren)
