@@ -297,5 +297,3 @@ def funktio_tabell_explain():
 
     trtl.ht()
     window.exitonclick()
-
-kordinat_explain()
