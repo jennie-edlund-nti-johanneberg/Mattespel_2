@@ -1,9 +1,10 @@
 #Jennie
 import turtle
+import time
 
 def pos(trtl, x, y):
     trtl.pu()
-    trtl.setpos(x, y) 
+    trtl.setpos(x, y)
     trtl.pd
     return
 
@@ -33,7 +34,7 @@ def kordinat_explain():
     trtl.rt(0)
     trtl.fd(200)
 
-    
+
     pos(trtl, -100, -100)
     trtl.pd()
     trtl.rt(-90)
@@ -44,21 +45,26 @@ def kordinat_explain():
     trtl.write("^", font=("Verdana", 12, "bold"))
 
     #Pilen till höger
-    pos(trtl, 100, -107) 
+    pos(trtl, 100, -107)
     trtl.write(">", font=("Verdana", 12, "bold"))
 
     #Skriver ut "x"
     pos(trtl, 100, -96)
     trtl.write("x",font=("Verdana", 12, "bold"))
-     
+
     #Skriver ut "y"
     pos(trtl, 10, -5)
     trtl.write("y",font=("Verdana", 12, "bold"))
 
     trtl.ht()
-    #window.onscreenclick(trtl.clear())    #den aoutoklickar? vad är window? hur delectar jag hela canvas istället för window?
-    #return
-    #on klick (trtl.clear, return) #den ska i slutet rensa canvas och retunera(gå ur def så den landar tillbaka i main_2)
+
+    #trtl.onclick(trtl.clear())
+    window.onclick(fxn)
+    window.mainloop()
+
+def fxn(x, y):
+    print("hej")
+    return
 
 def kvadrant_explain():
     window = turtle.Screen()
@@ -83,7 +89,7 @@ def kvadrant_explain():
     trtl.rt(0)
     trtl.fd(200)
 
-    
+
     pos(trtl, -100, -100)
     trtl.pd()
     trtl.rt(-90)
@@ -94,13 +100,13 @@ def kvadrant_explain():
     trtl.write("^", font=("Verdana", 12, "bold"))
 
     #Pilen till höger
-    pos(trtl, 100, -107) 
+    pos(trtl, 100, -107)
     trtl.write(">", font=("Verdana", 12, "bold"))
 
     #Skriver ut "x"
     pos(trtl, 100, -96)
     trtl.write("x",font=("Verdana", 12, "bold"))
-     
+
     #Skriver ut "y"
     pos(trtl, 10, -5)
     trtl.write("y",font=("Verdana", 12, "bold"))
@@ -291,3 +297,5 @@ def funktio_tabell_explain():
 
     trtl.ht()
     window.exitonclick()
+
+kordinat_explain()
