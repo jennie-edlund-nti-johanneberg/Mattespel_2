@@ -6,38 +6,37 @@ scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y"
 def minigames(user_choise):
     global scores
     if user_choise==0:
-        #tell text
-        #explain.kordinat_explain() fixa return i förklaring först
+        explain.kordinat_explain() #fixa return i förklaring först
         import kordinater
         kordinater.padda(scores)
     elif user_choise==1:
-        #tell text
+        explain.kvadrant_explain()
         import kvadrant
         kvadrant.game(scores)
     elif user_choise==2:
-        #tell text
+        explain.givenGraf_explain()
         import givenGraf
         givenGraf.grid(scores)
     elif user_choise==3:
-        #tell text
+        explain.funktio_tabell_explain()
         import funktio_tabell
         funktio_tabell.game(scores)
     elif user_choise==4:
-        #tell text
+        explain.x_for_y_explain
         import x_for_y
         x_for_y.grid(scores)
     elif user_choise==5:
-        #tell text
+        explain.potensiell_explain
         #fixa så den inte skriver ut i terminalen
         import potensiell
         potensiell.grid(scores)
     elif user_choise==6:
-        #tell text
+        explain.expo_explain
         #fixa så den inte skriver ut i terminalen
         import expo
         expo.grid(scores)
     else:
-        #run program
+        #run funny program
         print(user_choise)
 
 def flytt(trtl, length):
