@@ -110,6 +110,7 @@ def plotter(trtl, x_range, scores):
     for x in x_range:
         y = (k*x + m*50)
         trtl.goto(x, y)
+        trtl.color("red")
         trtl.pendown()
 
     kolla(k, m, trtl, scores)
