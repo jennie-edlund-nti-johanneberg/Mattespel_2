@@ -3,7 +3,7 @@ import time
 import explain
 scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0, "expo": 0}
 
-def minigames(user_choise):
+def minigames(user_choise, trtl):
     global scores
     if user_choise==0:
         explain.kordinat_explain() #fixa return i förklaring först
@@ -126,7 +126,7 @@ def game_hub():
 
     turtle.clearscreen()
     
-    minigames(user_input)
+    minigames(user_input, trtl)
     turtle.clear()
     game_hub()
 
