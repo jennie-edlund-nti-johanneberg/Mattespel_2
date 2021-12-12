@@ -89,6 +89,22 @@ def game_hub():
     pos(trtl, -320, -150)
     trtl.write("Lycka till!", font=("Time New Roman", 15, "normal"), align="left")
 
+    pos(trtl, 380, 200)
+    trtl.write("POÄNG:", font=("Time New Roman", 15, "bold"), align="left")
+
+    scores_uppdelad = [scores["koordinater"],scores["kvadrant"],scores["givengraf"],scores["funktion_tabell"],scores["x_for_y"],scores["potensiell"],scores["expo"]]
+    pos(trtl, 380, 175)
+    temp = 0
+
+    for n in (scores_uppdelad):
+        trtl.write(" → " + str(n), font=("Time New Roman", 12, "normal"), align="left")
+
+        temp += 1
+        y_kord = (175 - temp*30)
+        pos(trtl, 380, y_kord)
+
+
+    # window.exitonclick()
 
     trtl.ht()
     # window.exitonclick()
