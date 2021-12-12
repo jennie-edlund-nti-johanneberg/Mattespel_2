@@ -27,16 +27,13 @@ def minigames(user_choise):
         x_for_y.grid(scores)
     elif user_choise==5:
         explain.potensiell_explain()
-        #fixa så den inte skriver ut i terminalen
         import potensiell
         potensiell.grid(scores)
     elif user_choise==6:
         explain.expo_explain()
-        #fixa så den inte skriver ut i terminalen
         import expo
         expo.grid(scores)
     elif user_choise==7:
-        #fixa så den inte skriver ut i terminalen
         import easteregg
         easteregg.easteregg(scores)
     else:
@@ -89,6 +86,12 @@ def game_hub():
     pos(trtl, -320, -150)
     trtl.write("Lycka till!", font=("Time New Roman", 15, "normal"), align="left")
 
+    pos(trtl, 300, -120)
+    trtl.write('Skriv "stop"', font=("Time New Roman", 15, "bold"), align="left")
+
+    pos(trtl, 300, -140)
+    trtl.write("för att avsluta HELA spelet", font=("Time New Roman", 15, "bold"), align="left")
+
     pos(trtl, 380, 200)
     trtl.write("POÄNG:", font=("Time New Roman", 15, "bold"), align="left")
 
@@ -103,8 +106,7 @@ def game_hub():
         y_kord = (175 - temp*30)
         pos(trtl, 380, y_kord)
 
-
-    # window.exitonclick()
+    #window.exitonclick()
 
     trtl.ht()
     # window.exitonclick()
@@ -113,16 +115,22 @@ def game_hub():
 
     #ta in user input oc se till att de är en intiger mellan 0 0ch (6+1) hehe annars få dem att skriva in igen
     sc = turtle.Screen()
-    user_input=0
-    while user_input != None:
+    user_input = None
+
+    #Tar in användarinput (svaret)
+    while user_input == None:
         try:
-            user_input = int(sc.numinput("vart vill du 0-7","Ditt val:"))
-            if not 0 <= user_input <= 7:
-                raise ValueError
+            user_input = (sc.textinput("Vart vill du 0-7","Ditt val:"))
+            print(user_input)
+            print(type(user_input))
+            if user_input == "stop":
+                window.bye()
+            user_input = int(user_input)
         except (TypeError, OverflowError, ValueError):
             time.sleep(1)
             continue
         break
+
 
     turtle.clearscreen()
     
