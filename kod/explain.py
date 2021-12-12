@@ -2,6 +2,7 @@
 import turtle
 import time
 
+
 def pos(trtl, x, y):
     trtl.pu()
     trtl.setpos(x, y)
@@ -34,7 +35,6 @@ def kordinat_explain():
     trtl.rt(0)
     trtl.fd(200)
 
-
     pos(trtl, -100, -100)
     trtl.pd()
     trtl.rt(-90)
@@ -58,13 +58,7 @@ def kordinat_explain():
 
     trtl.ht()
 
-    #trtl.onclick(trtl.clear())
-    window.onclick(fxn)
-    window.mainloop()
 
-def fxn(x, y):
-    print("hej")
-    return
 
 def kvadrant_explain():
     window = turtle.Screen()

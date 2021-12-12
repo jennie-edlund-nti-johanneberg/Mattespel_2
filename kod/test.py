@@ -1,5 +1,4 @@
 #Jennie (testar kod här)
-from turtle import *
 import turtle
 
 # def flytt(trtl, length):
