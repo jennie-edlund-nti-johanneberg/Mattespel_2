@@ -27,16 +27,13 @@ def minigames(user_choise):
         x_for_y.grid(scores)
     elif user_choise==5:
         explain.potensiell_explain()
-        #fixa så den inte skriver ut i terminalen
         import potensiell
         potensiell.grid(scores)
     elif user_choise==6:
         explain.expo_explain()
-        #fixa så den inte skriver ut i terminalen
         import expo
         expo.grid(scores)
     elif user_choise==7:
-        #fixa så den inte skriver ut i terminalen
         import easteregg
         easteregg.easteregg(scores)
     else:
@@ -66,11 +63,11 @@ def game_hub():
     trtl.pu()
 
     pos(trtl, -320, 230) 
-    trtl.write("Välkommen till ett mattespel mannen!", font=("Time New Roman", 22, "bold"), align="left")
+    trtl.write("Välkommen till ett mattespelet!", font=("Time New Roman", 22, "bold"), align="left")
 
     pos(trtl, -300, 170) 
 
-    minispel=["Bestämning av x och y-kordinat av en punkt","Bestämning av kvadrant en punkt befinner sig i","Räta linjens ekvation (Y=kx+m)","Värdetabelövning för räta linjer","Att ge funktionsvärde på spesifika x värden i y=kx+m","Potensialfunktioner","Exponnsialfunktioner"]
+    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadrant en punkt befinner sig i","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer (y=kx+m)","Bestämma y-värde på specifika x-värden för räta linjer (y=kx+m)","Potensfunktioner","Exponentialfunktioner"]
     temp = 0
 
     for n in (minispel):
@@ -89,6 +86,27 @@ def game_hub():
     pos(trtl, -320, -150)
     trtl.write("Lycka till!", font=("Time New Roman", 15, "normal"), align="left")
 
+    pos(trtl, 300, -120)
+    trtl.write('Skriv "stop"', font=("Time New Roman", 15, "bold"), align="left")
+
+    pos(trtl, 300, -140)
+    trtl.write("för att avsluta HELA spelet", font=("Time New Roman", 15, "bold"), align="left")
+
+    pos(trtl, 380, 200)
+    trtl.write("POÄNG:", font=("Time New Roman", 15, "bold"), align="left")
+
+    scores_uppdelad = [scores["koordinater"],scores["kvadrant"],scores["givengraf"],scores["funktion_tabell"],scores["x_for_y"],scores["potensiell"],scores["expo"]]
+    pos(trtl, 380, 175)
+    temp = 0
+
+    for n in (scores_uppdelad):
+        trtl.write(" → " + str(n), font=("Time New Roman", 12, "normal"), align="left")
+
+        temp += 1
+        y_kord = (175 - temp*30)
+        pos(trtl, 380, y_kord)
+
+    #window.exitonclick()
 
     trtl.ht()
     # window.exitonclick()
@@ -97,21 +115,26 @@ def game_hub():
 
     #ta in user input oc se till att de är en intiger mellan 0 0ch (6+1) hehe annars få dem att skriva in igen
     sc = turtle.Screen()
-    user_input=0
-    while user_input != None:
+    user_input = None
+
+    #Tar in användarinput (svaret)
+    while user_input == None:
         try:
-            user_input = int(sc.numinput("vart vill du 0-7","Ditt val:"))
-            if not 0 <= user_input <= 7:
-                raise ValueError
+            user_input = (sc.textinput("Vart vill du 0-7","Ditt val:"))
+            if user_input == "stop":
+                window.bye()
+            user_input = int(user_input)
         except (TypeError, OverflowError, ValueError):
             time.sleep(1)
             continue
         break
 
+
     turtle.clearscreen()
     
     minigames(user_input)
-    turtle.clear()
+    trtl.clear()
+    time.sleep(0.5)
     game_hub()
 
 game_hub()

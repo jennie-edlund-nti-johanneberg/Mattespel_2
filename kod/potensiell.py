@@ -5,11 +5,11 @@ import time
 
 #Ger slumpade nummer mellan -10 och 10
 def randomNumber():
-    return (int(random.randint(-5, 5)))
+    return (int(random.randint(-15, 15)))
 
 #Ger slumpade nummer mellan -5 och 5
 def randomNumber_nr2():
-    return (int(random.randint(1, 2)))
+    return (int(random.randint(0, 3)))
 
 #Ger turtle position och färg
 def pen(trtl, posx, posy, color):

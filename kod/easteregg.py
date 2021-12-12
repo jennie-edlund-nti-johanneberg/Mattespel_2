@@ -21,5 +21,6 @@ def easteregg(scores):
     pos(trtl, 0, 0) 
     trtl.write("Wow", font=("Time New Roman", 22, "bold"), align="center")
     time.sleep(1.5)
+    trtl.ht()
     trtl.clear()
     return scores
