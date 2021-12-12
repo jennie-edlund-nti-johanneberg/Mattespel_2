@@ -22,13 +22,13 @@ def kordinat_explain():
     trtl.write("Detta spelet går ut på att du skriver in y-kordinaten och x-kordinaten till en punkt", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("x-kordinaten kan läsas genom att kolla vart punkten ligger på x-axeln.", font=('arial',15,'bold'), align='left')
+    trtl.write("x-kordinaten kan läsas genom att kolla vart punkten ligger på x-axeln.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540,100)
-    trtl.write("x-axeln är den horisontella linjen", font=('arial',15,'bold'), align='left')
+    trtl.write("x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("y-kordinaten hittas på samma sätt men du kollar på y-axeln. Den lodräta linjen.", font=('arial',15,'bold'), align='left')
+    trtl.write("y-kordinaten hittas på samma sätt men du kollar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, 0, 0)
     trtl.pd()
@@ -85,10 +85,10 @@ def kvadrant_explain():
     trtl.write("Detta spelet går ut på att du skriver in vilken kvadrant en punkt befinner sig i", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("Det finns fyra stycken kvadranter den första är längst uppe till höger.", font=('arial',15,'bold'), align='left')
+    trtl.write("Det finns fyra stycken kvadranter den första är längst uppe till höger.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540,100)
-    trtl.write("Kolla bilden nedan:", font=('arial',15,'bold'), align='left')
+    trtl.write("Kolla bilden nedan:", font=('arial',15,'normal'), align='left')
 
     pos(trtl, 0, 0)
     trtl.pd()
@@ -159,34 +159,34 @@ def givenGraf_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du skriver in vilken k-värde och m-värde funktionen", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spelet går ut på att bestämma räta linjens k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("y = kx+m har som ritas ut", font=('arial',20,'bold'), align='left')
+    trtl.write("Linjen ritas ut.", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'bold'), align='left')
+    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två punkter på funktionen. Ta sedan y-värdet på den ena punkten subtraherat med den andras.", font=('arial',15,'bold'), align='left')
+    trtl.write("Välj två punkter på funktionen. Ta sedan y-värdet på den ena punkten subtraherat med den andras.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("Dividera sedan värdet du får med (samma) förtsa punktens x-värdet subtraherat med den andras x-värde.", font=('arial',15,'bold'), align='left')
+    trtl.write("Dividera sedan värdet du får med (samma) första punktens x-värde subtraherat med den andra punktens x-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
-    trtl.write("Ett exemple med punkterna (2,2) och (4,8). Detta ger oss ∆y/∆x = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'bold'), align='left')
+    trtl.write("Ett exempel med punkterna (2,2) och (4,8). Detta ger oss ∆y/∆x = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -100)
-    trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'bold'), align='left')
+    trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -150)
-    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'bold'), align='left')
+    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -200)
-    trtl.write("(Ibland kommer det inte synas när funktionen går genom x-axeln utan man får ränka på det)", font=('arial',15,'bold'), align='left')
+    trtl.write("(Ibland kommer det inte synas när funktionen går genom x-axeln utan man får ränka på det)", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -250)
-    trtl.write("Tycker du detta är svårt kan det vara bra att träna på kordinater mer!", font=('arial',15,'bold'), align='left')
+    trtl.write("Tycker du detta är svårt kan det vara bra att träna på kordinater mer!", font=('arial',15,'italic'), align='left')
 
     trtl.ht()
 
@@ -214,16 +214,16 @@ def expo_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en exponensialfunktion", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en exponentialfunktion", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("Exponensialfunktioner skrivs ut y = C*a^x och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'bold'), align='left')
+    trtl.write("Exponensialfunktioner skrivs ut y = C*a^x och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("Här kan miniräknare vara ett bra hjälpmedel!", font=('arial',15,'bold'), align='left')
+    trtl.write("Här kan miniräknare vara ett bra hjälpmedel!", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Exemple kan vara y = 3*1^x där x = 2. Detta ger oss y = 3*1^2 = 3.", font=('arial',15,'bold'), align='left')
+    trtl.write("Exemple kan vara y = 3*1^x där x = 2. Detta ger oss y = 3*1^2 = 3.", font=('arial',15,'normal'), align='left')
 
     trtl.ht()
 
@@ -254,13 +254,13 @@ def potensiell_explain():
     trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en potensfunktion", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("Potensfunktioner skrivs ut y = C*x^a och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'bold'), align='left')
+    trtl.write("Potensfunktioner skrivs ut y = C*x^a och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("Här kan miniräknare vara ett bra hjälpmedel!", font=('arial',15,'bold'), align='left')
+    trtl.write("Här kan miniräknare vara ett bra hjälpmedel!", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Exemple kan vara y = 3*x^4 där x = 2. Detta ger oss y = 3*2^4 = 48.", font=('arial',15,'bold'), align='left')
+    trtl.write("Exempel kan vara y = 3*x^4 där x = 2. Detta ger oss y = 3*2^4 = 48.", font=('arial',15,'normal'), align='left')
 
     trtl.ht()
 
@@ -288,25 +288,25 @@ def x_for_y_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en räta linjens ekvation", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet är på en räta linjens ekvation", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("Räta linjens ekvation skrivs ut y = kx+m och en sådan funktion kommer att ritas ut.", font=('arial',15,'bold'), align='left')
+    trtl.write("Räta linjens ekvation skrivs ut y = kx+m och en sådan funktion kommer att ritas ut.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("Du kommer sedan att få ut ett x-värde och du får då mha grafen läsa av y-värdet där x-värdet är.", font=('arial',15,'bold'), align='left')
+    trtl.write("Du kommer sedan att få ut ett x-värde och du får då med hjälp av grafen läsa av y-värdet där x-värdet är.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Ibland kan linjen vara utanför grafen och då är det upp till dig att räkna ut vad y-värdet är.", font=('arial',15,'bold'), align='left')
+    trtl.write("Ibland kan linjen vara utanför grafen och då är det upp till dig att räkna ut vad y-värdet är.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("Tex ser du att funktionen har ett k-värde på 3 och y = 4 när x = 5.", font=('arial',15,'bold'), align='left')
+    trtl.write("T.ex ser du att funktionen har ett k-värde på 3 och y = 4 när x = 5.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
-    trtl.write("Då kan vi räkna ut vad y-värdet är när x = 6 genom att ta 4+3 = 7. Svar: y = 7", font=('arial',15,'bold'), align='left')
+    trtl.write("Då kan vi räkna ut vad y-värdet är när x = 6 genom att ta 4+3 = 7. Svar: y = 7", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -100)
-    trtl.write("Om detta är svårt kan det vara bra att kolla lite extra på räta linjens ekvation.", font=('arial',15,'bold'), align='left')
+    trtl.write("Om detta är svårt kan det vara bra att kolla lite extra på räta linjens ekvation.", font=('arial',15,'italic'), align='left')
 
     trtl.ht()
 
@@ -334,34 +334,34 @@ def funktio_tabell_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du skriver in vilken k-värde och m-värde funktionen", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spelet går ut på att bestämma räta linjens k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("y = kx+m har genom en värdetabell", font=('arial',20,'bold'), align='left')
+    trtl.write("genom en värdetabell", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'bold'), align='left')
+    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två x- och y-världen (samma rad) från tabellen. Ta sedan y-värdet från ena raden subtraherat med den andras.", font=('arial',15,'bold'), align='left')
+    trtl.write("Välj två x- och y-världen (samma rad) från tabellen. Ta sedan y-värdet från ena raden subtraherat med den andras.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("Dividera sedan värdet du får med x-värdet från (samma) första rad subtraherat med den andras x-värde.", font=('arial',15,'bold'), align='left')
+    trtl.write("Dividera sedan värdet du får med x-värdet från (samma) första rad subtraherat med den andras x-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
-    trtl.write("Ett exempel med värderna x1 = 2, y1 = 2 och x2 = 4, y2 = 8.", font=('arial',15,'bold'), align='left')
+    trtl.write("Ett exempel med värderna x1 = 2, y1 = 2 och x2 = 4, y2 = 8.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -100)
-    trtl.write("Detta ger oss ∆y/∆x = (y2-y1)/(x2-x1) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'bold'), align='left')
+    trtl.write("Detta ger oss ∆y/∆x = (y2-y1)/(x2-x1) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -150)
-    trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'bold'), align='left')
+    trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -200)
-    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'bold'), align='left')
+    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -250)
-    trtl.write("Om inte tabellen visar vad y-värdet är när x = 0 får du räkna ut m-värdet själv. Detta mha k-värdet.", font=('arial',15,'bold'), align='left')
+    trtl.write("Om inte tabellen visar vad y-värdet är när x = 0 får du räkna ut m-värdet själv. Detta med hjälp av k-värdet.", font=('arial',15,'italic'), align='left')
 
     trtl.ht()
 

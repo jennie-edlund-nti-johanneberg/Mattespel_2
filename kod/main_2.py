@@ -63,11 +63,11 @@ def game_hub():
     trtl.pu()
 
     pos(trtl, -320, 230) 
-    trtl.write("Välkommen till ett mattespel mannen!", font=("Time New Roman", 22, "bold"), align="left")
+    trtl.write("Välkommen till ett mattespelet!", font=("Time New Roman", 22, "bold"), align="left")
 
     pos(trtl, -300, 170) 
 
-    minispel=["Bestämning av x och y-kordinat av en punkt","Bestämning av kvadrant en punkt befinner sig i","Räta linjens ekvation (Y=kx+m)","Värdetabelövning för räta linjer","Att ge funktionsvärde på spesifika x värden i y=kx+m","Potensialfunktioner","Exponnsialfunktioner"]
+    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadrant en punkt befinner sig i","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer (y=kx+m)","Bestämma y-värde på specifika x-värden för räta linjer (y=kx+m)","Potensfunktioner","Exponentialfunktioner"]
     temp = 0
 
     for n in (minispel):
@@ -121,8 +121,6 @@ def game_hub():
     while user_input == None:
         try:
             user_input = (sc.textinput("Vart vill du 0-7","Ditt val:"))
-            print(user_input)
-            print(type(user_input))
             if user_input == "stop":
                 window.bye()
             user_input = int(user_input)
