@@ -9,9 +9,11 @@ def pos(trtl, x, y):
     return
 
 def kordinat_explain():
+    global window
     window = turtle.Screen()
     window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
 
+    global trtl
     trtl = turtle.Turtle()
 
     trtl.speed(0)
@@ -58,13 +60,19 @@ def kordinat_explain():
 
     trtl.ht()
 
-    #trtl.onclick(trtl.clear())
-    window.onclick(fxn)
-    window.mainloop()
+    #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
 
-def fxn(x, y):
-    print("hej")
-    return
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
 
 def kvadrant_explain():
     window = turtle.Screen()
@@ -129,7 +137,19 @@ def kvadrant_explain():
 
 
     trtl.ht()
-    window.exitonclick()
+     #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
+
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
 
 def givenGraf_explain():
     window = turtle.Screen()
@@ -171,7 +191,19 @@ def givenGraf_explain():
     trtl.write("Tycker du detta är svårt kan det vara bra att träna på kordinater mer!", font=('arial',15,'bold'), align='left')
 
     trtl.ht()
-    window.exitonclick()
+      #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
+
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
 
 def expo_explain():
     window = turtle.Screen()
@@ -195,7 +227,19 @@ def expo_explain():
     trtl.write("Exemple kan vara y = 3*1^x där x = 2. Detta ger oss y = 3*1^2 = 3.", font=('arial',15,'bold'), align='left')
 
     trtl.ht()
-    window.exitonclick()
+      #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
+
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
 
 def potensiell_explain():
     window = turtle.Screen()
@@ -219,7 +263,19 @@ def potensiell_explain():
     trtl.write("Exemple kan vara y = 3*x^4 där x = 2. Detta ger oss y = 3*2^4 = 48.", font=('arial',15,'bold'), align='left')
 
     trtl.ht()
-    window.exitonclick()
+      #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
+
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
 
 def x_for_y_explain():
 
@@ -253,7 +309,19 @@ def x_for_y_explain():
     trtl.write("Om detta är svårt kan det vara bra att kolla lite extra på räta linjens ekvation.", font=('arial',15,'bold'), align='left')
 
     trtl.ht()
-    window.exitonclick()
+      #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
+
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
 
 def funktio_tabell_explain():
 
@@ -296,4 +364,16 @@ def funktio_tabell_explain():
     trtl.write("Om inte tabellen visar vad y-värdet är när x = 0 får du räkna ut m-värdet själv. Detta mha k-värdet.", font=('arial',15,'bold'), align='left')
 
     trtl.ht()
-    window.exitonclick()
+      #Skärmen blir variablen "sc"    
+    sc = turtle.Screen()
+    user_guess = None
+
+    #Tar in användarinput (klar)
+    while user_guess == None:
+        user_guess = (sc.textinput("Skriv klar när du är redo", "Ditt svar:")) #obs här är det numera text
+        if user_guess == "klar":
+            trtl.clear()
+            return
+        else:
+             time.sleep(0.5)
+             user_guess = None
