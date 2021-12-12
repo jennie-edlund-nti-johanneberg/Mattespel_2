@@ -35,6 +35,10 @@ def minigames(user_choise):
         #fixa så den inte skriver ut i terminalen
         import expo
         expo.grid(scores)
+    elif user_choise==7:
+        #fixa så den inte skriver ut i terminalen
+        import easteregg
+        easteregg.easteregg(scores)
     else:
         #run funny program
         print(user_choise)
