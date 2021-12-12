@@ -48,7 +48,7 @@ def kolla(facity, trtl, scores):
     #Tar in användarinput (svaren)
     while svary == None:
         try:
-            svary = (sc.textinput("Vad är y?", "Ditt svar:"))
+            svary = (sc.textinput("Vad är y?", "Ditt svar (return = tillbaka):"))
             if svary == "return":
                 trtl.clear()
                 return 

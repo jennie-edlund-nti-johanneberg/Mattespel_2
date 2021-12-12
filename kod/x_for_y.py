@@ -49,7 +49,7 @@ def kolla(facitk, facitm, trtl, scores):
     #Tar in användarinput (svaret)
     while svary == None:
         try:
-            svary = (sc.textinput(f"Vad är y när x = {x}", "Ditt svar:")) #obs här är det numera text
+            svary = (sc.textinput(f"Vad är y när x = {x}", "Ditt svar (return = tillbaka):")) #obs här är det numera text
             if svary == "return":
                 trtl.clear()
                 return 

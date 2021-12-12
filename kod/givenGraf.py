@@ -44,13 +44,13 @@ def kolla(facitk, facitm, trtl, scores):
     #Tar in användarinput (svaren)
     while svark == None:
         try:
-            svark = (sc.textinput("Vad är k-konstanten", "Ditt svar:"))
+            svark = (sc.textinput("Vad är k-konstanten", "Ditt svar (return = tillbaka):"))
             if svark == "return":
                 trtl.clear()
                 return 
             svark = int(svark)
             
-            svarm = (sc.textinput("Vad är m-konstanten", "Ditt svar:")) #obs här är det numera text
+            svarm = (sc.textinput("Vad är m-konstanten", "Ditt svar (return = tillbaka):")) #obs här är det numera text
             if svarm == "return":
                 trtl.clear()
                 return 

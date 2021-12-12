@@ -57,7 +57,7 @@ def check(facit_kvad, trtl, scores):
     #Tar in användarinput (svaren)
     while user_guess == None:
         try:
-            user_guess = (sc.textinput("Vilken kvadrant", "Ditt svar:")) #obs här är det numera text
+            user_guess = (sc.textinput("Vilken kvadrant", "Ditt svar (return = tillbaka):")) #obs här är det numera text
             if user_guess == "return":
                 trtl.clear()
                 return

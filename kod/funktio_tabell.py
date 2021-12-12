@@ -129,13 +129,13 @@ def kolla(trtl, x_1, x_2, y_1, y_2, scores):
     #användargiss
     while svark == None:
         try:
-            svark = (sc.textinput("Vad är k-konstanten", "Ditt svar:"))
+            svark = (sc.textinput("Vad är k-konstanten", "Ditt svar (return = tillbaka):"))
             if svark == "return":
                 trtl.clear()
                 return 
             svark = int(svark)
             
-            svarm = (sc.textinput("Vad är m-konstanten", "Ditt svar:")) #obs här är det numera text
+            svarm = (sc.textinput("Vad är m-konstanten", "Ditt svar (return = tillbaka):")) #obs här är det numera text
             if svarm == "return":
                 trtl.clear()
                 return 
