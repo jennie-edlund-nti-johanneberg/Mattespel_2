@@ -166,6 +166,3 @@ def padda(scores):
 
     #Klar med sköldpadda
     kolla(x, y, trtl, scores)
-
-def omgång():
-    print(" ")

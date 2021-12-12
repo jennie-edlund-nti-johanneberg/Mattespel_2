@@ -105,13 +105,7 @@ def ekvation(trtl, scores):
     a = randomNumber()
     x = randomNumber_nr2()
 
-    print(c)
-    print(a)
-    print(x)
-
     y = c*a**x
-
-    print(y)
 
     pen(trtl, -90, 30, "black")
     trtl.write(f"y = {c} * ({a})^x",font=("Verdana", 12, "bold"))
