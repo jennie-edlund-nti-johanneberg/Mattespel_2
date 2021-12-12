@@ -81,10 +81,14 @@ def game_hub():
         pos(trtl, -300, x_kord)
 
     pos(trtl, -320, -90)
-    trtl.write("Du tar dig tillbaka genom att skriva return i rutan som kommer upp när du är i minispelen!!!!", font=("Time New Roman", 15, "bold"), align="left")
+    trtl.write("Du tar dig tillbaka genom att skriva return i rutan som", font=("Time New Roman", 15, "bold"), align="left")
 
     pos(trtl, -320, -120)
+    trtl.write("kommer upp när du är i minispelen!!!!", font=("Time New Roman", 15, "bold"), align="left")
+
+    pos(trtl, -320, -150)
     trtl.write("Lycka till!", font=("Time New Roman", 15, "normal"), align="left")
+
 
     trtl.ht()
     # window.exitonclick()
