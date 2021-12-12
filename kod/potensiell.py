@@ -63,7 +63,7 @@ def kolla(facity, trtl, scores):
             svary = None
 
     pen(trtl, -240, 225, "black")
-    trtl.write(f"Ditt svar: y = {svary}",font=("Verdana", 12, "bold"))
+    trtl.write(f"Ditt svar: y = {int(svary)}",font=("Verdana", 12, "bold"))
 
     pen(trtl, -240, 207, "black")
     trtl.write(f"Rätt svar: y = {facity}",font=("Verdana", 12, "bold"))
@@ -129,4 +129,3 @@ def grid(scores):
     trtl.hideturtle()
 
     ekvation_y(trtl, scores)
-
