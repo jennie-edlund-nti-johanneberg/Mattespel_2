@@ -22,16 +22,16 @@ def minigames(user_choise):
         import funktio_tabell
         funktio_tabell.game(scores)
     elif user_choise==4:
-        explain.x_for_y_explain
+        explain.x_for_y_explain()
         import x_for_y
         x_for_y.grid(scores)
     elif user_choise==5:
-        explain.potensiell_explain
+        explain.potensiell_explain()
         #fixa så den inte skriver ut i terminalen
         import potensiell
         potensiell.grid(scores)
     elif user_choise==6:
-        explain.expo_explain
+        explain.expo_explain()
         #fixa så den inte skriver ut i terminalen
         import expo
         expo.grid(scores)
