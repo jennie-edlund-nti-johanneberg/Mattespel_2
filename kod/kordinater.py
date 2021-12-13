@@ -1,4 +1,5 @@
-#Jennie
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
 #Fel knapp 10gg gå vidare
 import time
 import random

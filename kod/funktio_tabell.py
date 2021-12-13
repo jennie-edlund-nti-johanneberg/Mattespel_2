@@ -1,4 +1,5 @@
-#Erik
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
 import turtle
 import random
 import time
