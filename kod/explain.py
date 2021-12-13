@@ -19,16 +19,16 @@ def kordinat_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du skriver in y-kordinaten och x-kordinaten till en punkt", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att du skriver in y-kordinaten och x-kordinaten till en punkt", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("x-kordinaten kan läsas genom att kolla vart punkten ligger på x-axeln.", font=('arial',15,'normal'), align='left')
+    trtl.write("x-kordinaten kan läsas genom att tittar vart punkten ligger på x-axeln.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540,100)
     trtl.write("x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("y-kordinaten hittas på samma sätt men du kollar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
+    trtl.write("y-kordinaten hittas på samma sätt men du tittar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, 0, 0)
     trtl.pd()
@@ -82,7 +82,7 @@ def kvadrant_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du skriver in vilken kvadrant en punkt befinner sig i", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att du skriver in vilken kvadrant en punkt befinner sig i", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("Det finns fyra stycken kvadranter den första är längst uppe till höger.", font=('arial',15,'normal'), align='left')
@@ -168,7 +168,7 @@ def givenGraf_explain():
     trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två punkter på funktionen. Ta sedan y-värdet på den ena punkten subtraherat med den andras.", font=('arial',15,'normal'), align='left')
+    trtl.write("Välj två punkter på funktionen. Ta sedan y-värdet på den ena kordinaten och subtraherat med den andra kordinatens y-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
     trtl.write("Dividera sedan värdet du får med (samma) första punktens x-värde subtraherat med den andra punktens x-värde.", font=('arial',15,'normal'), align='left')

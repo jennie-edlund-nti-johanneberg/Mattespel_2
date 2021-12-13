@@ -63,11 +63,11 @@ def game_hub():
     trtl.pu()
 
     pos(trtl, -320, 230) 
-    trtl.write("Välkommen till ett mattespelet!", font=("Time New Roman", 22, "bold"), align="left")
+    trtl.write("Välkommen till mattespelet!", font=("Time New Roman", 22, "bold"), align="left")
 
     pos(trtl, -300, 170) 
 
-    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadrant en punkt befinner sig i","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer (y=kx+m)","Bestämma y-värde på specifika x-värden för räta linjer (y=kx+m)","Potensfunktioner","Exponentialfunktioner"]
+    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadranten en punkt befinner sig i","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer ","Bestämma y-värde på specifika x-värden för räta linjer ","Potensfunktioner","Exponentialfunktioner"]
     temp = 0
 
     for n in (minispel):
