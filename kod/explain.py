@@ -23,12 +23,9 @@ def kordinat_explain():
     trtl.write("Detta spel går ut på att du skriver in y-kordinaten och x-kordinaten till en punkt", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("x-kordinaten kan läsas genom att tittar vart punkten ligger på x-axeln.", font=('arial',15,'normal'), align='left')
+    trtl.write("x-kordinaten kan läsas genom att tittar vart punkten ligger på x-axeln. Där x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
 
-    pos(trtl, -540,100)
-    trtl.write("x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
-
-    pos(trtl, -540, 50)
+    pos(trtl, -540, 100)
     trtl.write("y-kordinaten hittas på samma sätt men du tittar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, 0, 0)
@@ -65,7 +62,7 @@ def kordinat_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", "Skriv klar:")) 
         if user_guess == "klar":
             trtl.clear()
             return
@@ -160,28 +157,28 @@ def givenGraf_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att bestämma räta linjens k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spelet går ut på att bestämma en rät linjes k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("Linjen ritas ut.", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'normal'), align='left')
+    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta, differensen av värdet).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två punkter på funktionen. Ta sedan y-värdet på den ena kordinaten och subtraherat med den andra kordinatens y-värde.", font=('arial',15,'normal'), align='left')
+    trtl.write("Välj två kordinater på linjen. Ta sedan y-värdet på den ena kordinaten och subtraherat med den andra kordinatens y-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("Dividera sedan värdet du får med (samma) första punktens x-värde subtraherat med den andra punktens x-värde.", font=('arial',15,'normal'), align='left')
+    trtl.write("Dividera sedan värdet du får med differensen mellan första och andra kordinatens x-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
-    trtl.write("Ett exempel med punkterna (2,2) och (4,8). Detta ger oss ∆y/∆x = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
+    trtl.write("Ett exempel med kordinaterna p1=(2,2) och p2=(4,8). Detta ger oss ∆y/∆x = (p2y-p1y)/(p2x-p1x) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -100)
     trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -150)
-    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'normal'), align='left')
+    trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln, när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -200)
     trtl.write("(Ibland kommer det inte synas när funktionen går genom x-axeln utan man får ränka på det)", font=('arial',15,'normal'), align='left')
