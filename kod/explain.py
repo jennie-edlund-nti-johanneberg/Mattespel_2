@@ -341,10 +341,10 @@ def funktio_tabell_explain():
     trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två x- och y-världen (samma rad) från tabellen. Ta sedan y-värdet från ena raden subtraherat med den andras.", font=('arial',15,'normal'), align='left')
+    trtl.write("Välj två rader från tabellen. Ta sedan y-värdet från ena raden, subtraherat med den andra radens y-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("Dividera sedan värdet du får med x-värdet från (samma) första rad subtraherat med den andras x-värde.", font=('arial',15,'normal'), align='left')
+    trtl.write("Dividera sedan skillnaden i y-värderna med (x-värdet från första rad subtraherat med den andra radens.)", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
     trtl.write("Ett exempel med värderna x1 = 2, y1 = 2 och x2 = 4, y2 = 8.", font=('arial',15,'normal'), align='left')
@@ -353,13 +353,12 @@ def funktio_tabell_explain():
     trtl.write("Detta ger oss ∆y/∆x = (y2-y1)/(x2-x1) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -150)
-    trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'normal'), align='left')
-
-    pos(trtl, -540, -200)
     trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln eller när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'normal'), align='left')
 
-    pos(trtl, -540, -250)
-    trtl.write("Om inte tabellen visar vad y-värdet är när x = 0 får du räkna ut m-värdet själv. Detta med hjälp av k-värdet.", font=('arial',15,'italic'), align='left')
+    pos(trtl, -540, -200)
+    trtl.write("Om inte tabellen visar vad y-värdet är när x = 0 får du räkna ut m-värdet själv. ", font=('arial',15,'italic'), align='left')
+    pos(trtl, -540, -230)
+    trtl.write("Gör detta genom att ta k-värdet multiplicerat ett x-värde i tabellen. Differensen mellan k*x och y-värdet ger dig m-värdet ", font=('arial',15,'italic'), align='left')
 
     trtl.ht()
 
