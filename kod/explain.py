@@ -212,7 +212,7 @@ def expo_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en exponentialfunktion", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att du ska räkna ut vad y-värdet på en exponentialfunktion", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("Exponensialfunktioner skrivs ut y = C*a^x och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'normal'), align='left')
@@ -249,7 +249,7 @@ def potensiell_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet på en potensfunktion", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att du ska räkna ut y-värdet på en potensfunktion", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("Potensfunktioner skrivs ut y = C*x^a och du kommer att få ut C-, a- och x-värdet.", font=('arial',15,'normal'), align='left')
