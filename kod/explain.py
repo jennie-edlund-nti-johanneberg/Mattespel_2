@@ -10,7 +10,7 @@ def pos(trtl, x, y):
     trtl.pd
     return
 
-def kordinat_explain():
+def koordinat_explain():
     window = turtle.Screen()
     window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
 
@@ -20,13 +20,13 @@ def kordinat_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spel går ut på att du skriver in y-kordinaten och x-kordinaten till en punkt", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att du skriver in y-koordinaten och x-koordinaten till en punkt", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("x-kordinaten kan läsas genom att tittar vart punkten ligger på x-axeln. Där x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
+    trtl.write("x-koordinaten kan läsas genom att tittar vart punkten ligger på x-axeln. Där x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("y-kordinaten hittas på samma sätt men du tittar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
+    trtl.write("y-koordinaten hittas på samma sätt men du tittar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, 0, 0)
     trtl.pd()
@@ -166,13 +166,13 @@ def givenGraf_explain():
     trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta, differensen av värdet).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två kordinater på linjen. Ta sedan y-värdet på den ena kordinaten och subtraherat med den andra kordinatens y-värde.", font=('arial',15,'normal'), align='left')
+    trtl.write("Välj två koordinater på linjen. Ta sedan y-värdet på den ena koordinaten och subtraherat med den andra koordinatens y-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("Dividera sedan värdet du får med differensen mellan första och andra kordinatens x-värde.", font=('arial',15,'normal'), align='left')
+    trtl.write("Dividera sedan värdet du får med differensen mellan första och andra koordinatens x-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
-    trtl.write("Ett exempel med kordinaterna p1=(2,2) och p2=(4,8). Detta ger oss ∆y/∆x = (p2y-p1y)/(p2x-p1x) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
+    trtl.write("Ett exempel med koordinaterna p1=(2,2) och p2=(4,8). Detta ger oss ∆y/∆x = (p2y-p1y)/(p2x-p1x) = (8-2)/(4-2) = 3. k = 3.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -100)
     trtl.write("(Tips är att ta punkten med större värden på x och y först).", font=('arial',15,'normal'), align='left')
@@ -184,7 +184,7 @@ def givenGraf_explain():
     trtl.write("(Ibland kommer det inte synas när funktionen går genom x-axeln utan man får ränka på det)", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -250)
-    trtl.write("Tycker du detta är svårt kan det vara bra att träna på kordinater mer!", font=('arial',15,'italic'), align='left')
+    trtl.write("Tycker du detta är svårt kan det vara bra att träna på koordinater mer!", font=('arial',15,'italic'), align='left')
 
     trtl.ht()
 
