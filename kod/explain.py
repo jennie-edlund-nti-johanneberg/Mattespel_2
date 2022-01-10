@@ -23,7 +23,7 @@ def koordinat_explain():
     trtl.write("Detta spel går ut på att du skriver in y-koordinaten och x-koordinaten till en punkt", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("x-koordinaten kan läsas genom att tittar vart punkten ligger på x-axeln. Där x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
+    trtl.write("x-koordinaten kan läsas genom att titta vart punkten ligger på x-axeln. Där x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 100)
     trtl.write("y-koordinaten hittas på samma sätt men du tittar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
@@ -157,7 +157,7 @@ def givenGraf_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att bestämma en rät linjes k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att bestämma en rät linjes k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("Linjen ritas ut.", font=('arial',20,'bold'), align='left')
@@ -166,7 +166,7 @@ def givenGraf_explain():
     trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta, differensen av värdet).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
-    trtl.write("Välj två koordinater på linjen. Ta sedan y-värdet på den ena koordinaten och subtraherat med den andra koordinatens y-värde.", font=('arial',15,'normal'), align='left')
+    trtl.write("Välj två koordinater på linjen. Ta sedan y-värdet på den ena koordinaten och subtrahera med den andra koordinatens y-värde.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
     trtl.write("Dividera sedan värdet du får med differensen mellan första och andra koordinatens x-värde.", font=('arial',15,'normal'), align='left')
@@ -181,7 +181,7 @@ def givenGraf_explain():
     trtl.write("M-värdet är y-värdet när funktionen går genom y-axeln, när x = 0. Eftersom y=k*0+m => y = m", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -200)
-    trtl.write("(Ibland kommer det inte synas när funktionen går genom x-axeln utan man får ränka på det)", font=('arial',15,'normal'), align='left')
+    trtl.write("(Ibland kommer det inte synas när funktionen går genom y-axeln utan man får ränka på det)", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -250)
     trtl.write("Tycker du detta är svårt kan det vara bra att träna på koordinater mer!", font=('arial',15,'italic'), align='left')
@@ -286,7 +286,7 @@ def x_for_y_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att du ska räkna ut vad y-värdet är på en räta linjens ekvation", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spelet går ut på att du ska bestämma vad y-värdet är på räta linjens ekvation", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("Räta linjens ekvation skrivs ut y = kx+m och en sådan funktion kommer att ritas ut.", font=('arial',15,'normal'), align='left')
@@ -298,10 +298,10 @@ def x_for_y_explain():
     trtl.write("Ibland kan linjen vara utanför grafen och då är det upp till dig att räkna ut vad y-värdet är.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 0)
-    trtl.write("T.ex ser du att funktionen har ett k-värde på 3 och y = 4 när x = 5.", font=('arial',15,'normal'), align='left')
+    trtl.write("Om du t.ex ser att en funktion har ett k-värde på 3 och y = 4 när x = 5.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -50)
-    trtl.write("Då kan vi räkna ut vad y-värdet är när x = 6 genom att ta 4+3 = 7. Svar: y = 7", font=('arial',15,'normal'), align='left')
+    trtl.write("Då kan du räkna ut vad y-värdet är när x = 6 genom att ta 4+3*Δx= 4+3*1 = 7. Svar: y = 7 då x = 6", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, -100)
     trtl.write("Om detta är svårt kan det vara bra att kolla lite extra på räta linjens ekvation.", font=('arial',15,'italic'), align='left')
