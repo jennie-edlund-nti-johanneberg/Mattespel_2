@@ -45,13 +45,13 @@ def kolla(facitx, facity, trtl, scores):
     #Tar in användarinput (svaren)
     while svary == None:
         try:
-            svarx = (sc.textinput("Vad är x-kordinaten", "Ditt svar (return = tillbaka):")) #obs här är det numera text
+            svarx = (sc.textinput("Vad är x-kordinaten", 'Ditt svar (tillbaka = "return"):')) #obs här är det numera text
             if svarx == "return":
                 trtl.clear()
                 return 
             svarx = int(svarx)#texten blir till siffra igen, om man skrev in annan text än return tar undantagshanteringen hand om det
 
-            svary = (sc.textinput("Vad är y-kordinaten", "Ditt svar (return = tillbaka):")) #obs här är det numera text
+            svary = (sc.textinput("Vad är y-kordinaten", 'Ditt svar (tillbaka = "return"):')) #obs här är det numera text
             if svary == "return":
                 trtl.clear()
                 return 
