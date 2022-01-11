@@ -62,7 +62,7 @@ def koordinat_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) 
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) 
         if user_guess == "klar":
             trtl.clear()
             return
@@ -139,7 +139,7 @@ def kvadrant_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) #obs här är det numera text
         if user_guess == "klar":
             trtl.clear()
             return
@@ -194,7 +194,7 @@ def givenGraf_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) #obs här är det numera text
         if user_guess == "klar":
             trtl.clear()
             return
@@ -231,7 +231,7 @@ def expo_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) #obs här är det numera text
         if user_guess == "klar":
             trtl.clear()
             return
@@ -268,7 +268,7 @@ def potensiell_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) #obs här är det numera text
         if user_guess == "klar":
             trtl.clear()
             return
@@ -314,7 +314,7 @@ def x_for_y_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) #obs här är det numera text
         if user_guess == "klar":
             trtl.clear()
             return
@@ -368,7 +368,7 @@ def funktio_tabell_explain():
 
     #Tar in användarinput (klar)
     while user_guess == None:
-        user_guess = (sc.textinput("Redo?", "Skriv klar:")) #obs här är det numera text
+        user_guess = (sc.textinput("Redo?", 'Skriv "klar":')) #obs här är det numera text
         if user_guess == "klar":
             trtl.clear()
             return
