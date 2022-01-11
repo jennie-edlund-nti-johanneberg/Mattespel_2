@@ -39,11 +39,11 @@ def kolla(facitx, facity, trtl, scores):
 
     #Skälva skärmen läggs i variablen "sc"    
     sc = turtle.Screen()
-    svarx = 0
-    svary = 0
+    svarx = None
+    svary = None
 
     #Tar in användarinput (svaren)
-    while svary != None:
+    while svary == None:
         try:
             svarx = (sc.textinput("Vad är x-kordinaten", "Ditt svar (return = tillbaka):")) #obs här är det numera text
             if svarx == "return":
