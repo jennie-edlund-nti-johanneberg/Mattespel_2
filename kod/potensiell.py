@@ -37,7 +37,7 @@ def wrong():
     pen(trtl, -15, 100, "black")
     trtl.write("FEL!", font=style, align="center")
     trtl.hideturtle()
-    time.sleep(2)
+    time.sleep(4)
     trtl.clear()
 
 #Kollar om användaren har samma svar som facit

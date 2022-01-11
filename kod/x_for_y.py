@@ -33,7 +33,7 @@ def wrong():
     style = ("Arial", 30, "italic")
     trtl.write("FEL!", font=style, align="center")
     trtl.hideturtle()
-    time.sleep(2)
+    time.sleep(4)
     trtl.clear()
 
 #Kollar om användaren har samma svar som facit

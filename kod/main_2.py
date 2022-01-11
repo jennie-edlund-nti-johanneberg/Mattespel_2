@@ -3,30 +3,30 @@
 import turtle
 import time
 import explain
-scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "potensiell":0, "x_for_y":0, "funktion_tabell":0, "expo": 0}
+scores = {"koordinater":0,"kvadrant":0, "givengraf":0, "x_for_y":0, "potensiell":0, "funktion_tabell":0, "expo": 0}
 
 def minigames(user_choise):
     global scores
     if user_choise==0:
-        explain.kordinat_explain()
+        explain.koordinat_explain()
         import kordinater
         kordinater.padda(scores)
     elif user_choise==1:
         explain.kvadrant_explain()
         import kvadrant
         kvadrant.game(scores)
-    elif user_choise==2:
-        explain.givenGraf_explain()
-        import givenGraf
-        givenGraf.grid(scores)
-    elif user_choise==3:
-        explain.funktio_tabell_explain()
-        import funktio_tabell
-        funktio_tabell.game(scores)
-    elif user_choise==4:
+    elif user_choise==2:  
         explain.x_for_y_explain()
         import x_for_y
         x_for_y.grid(scores)
+    elif user_choise==3:
+        explain.givenGraf_explain()
+        import givenGraf
+        givenGraf.grid(scores) 
+    elif user_choise==4:
+        explain.funktio_tabell_explain()
+        import funktio_tabell
+        funktio_tabell.game(scores)
     elif user_choise==5:
         explain.potensiell_explain()
         import potensiell
@@ -69,7 +69,7 @@ def game_hub():
 
     pos(trtl, -300, 170) 
 
-    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadranten en punkt befinner sig i","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer ","Bestämma y-värde på specifika x-värden för räta linjer ","Potensfunktioner","Exponentialfunktioner"]
+    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadranten en punkt befinner sig i","Bestämma y-värde på specifika x-värden för räta linjer ","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer ","Potensfunktioner","Exponentialfunktioner"]
     temp = 0
 
     for n in (minispel):
@@ -97,7 +97,7 @@ def game_hub():
     pos(trtl, 380, 200)
     trtl.write("POÄNG:", font=("Time New Roman", 15, "bold"), align="left")
 
-    scores_uppdelad = [scores["koordinater"],scores["kvadrant"],scores["givengraf"],scores["funktion_tabell"],scores["x_for_y"],scores["potensiell"],scores["expo"]]
+    scores_uppdelad = [scores["koordinater"],scores["kvadrant"],scores["x_for_y"],scores["givengraf"],scores["funktion_tabell"],scores["potensiell"],scores["expo"]]
     pos(trtl, 380, 175)
     temp = 0
 
