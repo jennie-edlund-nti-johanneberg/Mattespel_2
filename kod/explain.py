@@ -332,13 +332,13 @@ def funktio_tabell_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spelet går ut på att bestämma räta linjens k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att bestämma räta linjens k-värde och m-värde (y = kx+m)", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
     trtl.write("genom en värdetabell", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta).", font=('arial',15,'normal'), align='left')
+    trtl.write("K-värdet kan räknas ut genom att ta ∆y/∆x = k. (Triangeln står för delta, differensen av värdet).", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 50)
     trtl.write("Välj två rader från tabellen. Ta sedan y-värdet från ena raden, subtraherat med den andra radens y-värde.", font=('arial',15,'normal'), align='left')
