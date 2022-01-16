@@ -20,13 +20,13 @@ def koordinat_explain():
     trtl.ht()
     pos(trtl, -540, 200)
     trtl.rt(90)
-    trtl.write("Detta spel går ut på att du skriver in y-koordinaten och x-koordinaten till en punkt", font=('arial',20,'bold'), align='left')
+    trtl.write("Detta spel går ut på att du skriver in y-värdet och x-värdet till en punkt", font=('arial',20,'bold'), align='left')
 
     pos(trtl, -540, 150)
-    trtl.write("x-koordinaten kan läsas genom att titta vart punkten ligger på x-axeln. Där x-axeln är den horisontella linjen", font=('arial',15,'normal'), align='left')
+    trtl.write("x-värdet kan läsas genom att titta vart punkten ligger på x-axeln, den horisontella linjen", font=('arial',15,'normal'), align='left')
 
     pos(trtl, -540, 100)
-    trtl.write("y-koordinaten hittas på samma sätt men du tittar på y-axeln. Den lodräta linjen.", font=('arial',15,'normal'), align='left')
+    trtl.write("y-värdet hittas på samma sätt men du tittar på y-axeln, den lodräta linjen.", font=('arial',15,'normal'), align='left')
 
     pos(trtl, 0, 0)
     trtl.pd()
