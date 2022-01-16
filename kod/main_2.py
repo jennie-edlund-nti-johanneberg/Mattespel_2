@@ -66,8 +66,11 @@ def game_hub():
 
     pos(trtl, -320, 230) 
     trtl.write("Välkommen till mattespelet!", font=("Time New Roman", 22, "bold"), align="left")
+    
+    pos(trtl, -320, 180)
+    trtl.write("Välj ett minispel genom att skriva 0-6", font=("Time New Roman", 15, "normal"), align="left")
 
-    pos(trtl, -300, 170) 
+    pos(trtl, -300, 140) 
 
     minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadranten en punkt befinner sig i","Bestämma y-värde på specifika x-värden för räta linjer ","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer ","Potensfunktioner","Exponentialfunktioner"]
     temp = 0
@@ -76,25 +79,20 @@ def game_hub():
         trtl.write(str(minispel.index(n)) + " - " + n, font=("Time New Roman", 15, "normal"), align="left")
 
         temp += 1
-        x_kord = (170 - temp*30)
+        x_kord = (140 - temp*30)
         pos(trtl, -300, x_kord)
 
-    pos(trtl, -320, -50)
-    trtl.write("Välj ett minispel genom att skriva 0-6", font=("Time New Roman", 15, "normal"), align="left")
     pos(trtl, -320, -90)
-    trtl.write("Du tar dig tillbaka genom att skriva return i rutan som", font=("Time New Roman", 15, "bold"), align="left")
+    trtl.write("Du tar dig tillbaka hit genom att skriva return i rutan ", font=("Time New Roman", 15, "bold"), align="left")
 
     pos(trtl, -320, -120)
-    trtl.write("kommer upp när du är i minispelen!!!!", font=("Time New Roman", 15, "bold"), align="left")
+    trtl.write("som kommer upp när du är i minispelen!!!!", font=("Time New Roman", 15, "bold"), align="left")
 
-    pos(trtl, -320, -150)
+    pos(trtl, -320, -160)
+    trtl.write('Skriv "stop" för att avsluta HELA spelet', font=("Time New Roman", 15, "bold"), align="left")
+
+    pos(trtl, -320, -200)
     trtl.write("Lycka till!", font=("Time New Roman", 15, "normal"), align="left")
-
-    pos(trtl, 300, -120)
-    trtl.write('Skriv "stop"', font=("Time New Roman", 15, "bold"), align="left")
-
-    pos(trtl, 300, -140)
-    trtl.write("för att avsluta HELA spelet", font=("Time New Roman", 15, "bold"), align="left")
 
     pos(trtl, 380, 200)
     trtl.write("POÄNG:", font=("Time New Roman", 15, "bold"), align="left")
