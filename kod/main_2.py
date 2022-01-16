@@ -72,7 +72,7 @@ def game_hub():
 
     pos(trtl, -300, 140) 
 
-    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma kvadranten en punkt befinner sig i","Bestämma y-värde på specifika x-värden för räta linjer ","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer ","Potensfunktioner","Exponentialfunktioner"]
+    minispel=["Bestämma x- och y-kordinat av en punkt","Bestämma vilken kvadrant en punkt befinner sig i","Bestämma y-värdet på specifika x-värden för räta linjer ","Räta linjens ekvation (y=kx+m)","Värdetabell för räta linjer ","Potensfunktioner","Exponentialfunktioner"]
     temp = 0
 
     for n in (minispel):
