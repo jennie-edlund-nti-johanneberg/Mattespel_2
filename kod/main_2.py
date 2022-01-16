@@ -79,6 +79,8 @@ def game_hub():
         x_kord = (170 - temp*30)
         pos(trtl, -300, x_kord)
 
+    pos(trtl, -320, -50)
+    trtl.write("Välj ett minispel genom att skriva 0-6", font=("Time New Roman", 15, "normal"), align="left")
     pos(trtl, -320, -90)
     trtl.write("Du tar dig tillbaka genom att skriva return i rutan som", font=("Time New Roman", 15, "bold"), align="left")
 
