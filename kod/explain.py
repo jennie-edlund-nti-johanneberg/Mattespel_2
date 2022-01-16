@@ -223,6 +223,9 @@ def expo_explain():
     pos(trtl, -540, 50)
     trtl.write("Exemple kan vara y = 3*1^x där x = 2. Detta ger oss y = 3*1^2 = 3.", font=('arial',15,'normal'), align='left')
 
+    pos(trtl, -540, 0)
+    trtl.write("Men när en siffra är upphöjt med 0 ger detta alltid 1. Tex 23^0 = 1.", font=('arial',15,'normal'), align='left')
+
     trtl.ht()
 
     #Skärmen blir variablen "sc"    
@@ -259,6 +262,9 @@ def potensiell_explain():
 
     pos(trtl, -540, 50)
     trtl.write("Exempel kan vara y = 3*x^4 där x = 2. Detta ger oss y = 3*2^4 = 48.", font=('arial',15,'normal'), align='left')
+
+    pos(trtl, -540, 0)
+    trtl.write("Men när en siffra är upphöjt med 0 ger detta alltid 1. Tex 23^0 = 1.", font=('arial',15,'normal'), align='left')
 
     trtl.ht()
 
