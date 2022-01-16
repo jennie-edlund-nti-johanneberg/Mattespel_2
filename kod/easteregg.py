@@ -16,12 +16,13 @@ def easteregg(scores):
     window.setup(width = 1.0, height = 1.0, startx=None, starty=None)
     trtl = turtle.Turtle()
 
-    trtl.speed(0)
     trtl.ht()
 
-    pos(trtl, 0, 0) 
-    trtl.write("Wow", font=("Time New Roman", 22, "bold"), align="center")
-    time.sleep(1.5)
+    pos(trtl, -10, -10) 
+    trtl.pd()
+    trtl.shape("turtle")
+    trtl.showturtle()
+    trtl.rt(1000) 
     trtl.ht()
     trtl.clear()
     return scores
